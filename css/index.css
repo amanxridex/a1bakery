@@ -1,6 +1,6 @@
         @font-face {
             font-family: 'Talina';
-            src: url('./fonts/Talina DEMO.otf') format('opentype');
+            src: url('../fonts/Talina%20DEMO.otf') format('opentype');
             font-weight: normal;
             font-style: normal;
         }
@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Talina', sans-serif !important;
         }
 
         :root {
@@ -22,8 +23,7 @@
             --text-light: #6D4C41;
         }
 
-        body, button, input {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        body {
             background: var(--cream);
             color: var(--text);
             overflow-x: hidden;
@@ -130,7 +130,7 @@
         /* Hero Section */
         .hero-wrapper {
             padding: 40px 60px 80px;
-            max-width: 1400px;
+            max-width: 1800px;
             margin: 0 auto;
         }
 
@@ -138,19 +138,24 @@
             background: white;
             border-radius: 40px;
             padding: 60px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .hero-header-top {
+            text-align: center;
         }
 
         .hero-header-top h1 {
-            font-size: 110px;
+            display: inline-block;
+            text-align: left;
+            font-size: 125px;
             font-weight: 800;
             line-height: 0.95;
             color: var(--brown);
             margin-bottom: 40px;
             text-transform: uppercase;
-            letter-spacing: -2px;
+            letter-spacing: 2px;
             position: relative;
-            text-align: center;
         }
 
         .hero-content {
@@ -158,6 +163,16 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
+        }
+
+        .word-wrap {
+            position: relative;
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .word-wrap:last-child {
+            margin-right: 0;
         }
 
         .hero-tag {
@@ -169,36 +184,36 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            position: relative;
-            vertical-align: middle;
+            position: absolute;
+            z-index: 10;
         }
 
         .hero-tag.tasty {
             background: var(--mint);
-            top: -30px;
-            left: -10px;
+            top: 25px;
+            right: -20px;
             transform: rotate(-10deg);
         }
 
         .hero-tag.crunchy {
             background: var(--peach);
             color: var(--brown);
-            top: 20px;
-            left: 10px;
+            top: 25px;
+            right: 50px;
             transform: rotate(10deg);
         }
 
         .steam-icon-heading {
             position: absolute;
             top: -40px;
-            left: 30%;
+            left: 20%;
             width: 40px;
             height: 40px;
             opacity: 0.5;
         }
 
         .hero-subtitle {
-            font-size: 24px;
+            font-size: 40px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -213,9 +228,9 @@
             display: inline-block;
             background: var(--sky);
             color: white;
-            padding: 4px 12px;
+            padding: 8px 20px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 18px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -368,7 +383,7 @@
             color: var(--brown);
             z-index: 10;
         }
-        
+
         .family-sticker svg {
             position: absolute;
             width: 40px;
@@ -383,7 +398,9 @@
         }
 
         @keyframes spin {
-            100% { transform: rotate(360deg); }
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .delight-text {
@@ -519,12 +536,36 @@
             font-size: 12px;
         }
 
-        .pill.cookies { background: #EFEBE4; color: var(--brown); border-color: var(--brown); }
-        .pill.cake { background: var(--sky); color: var(--brown); }
-        .pill.bretzel { background: #D1C4E9; color: var(--brown); }
-        .pill.pastries { background: #F5F5F5; color: var(--brown); }
-        .pill.croissant { background: var(--yellow); color: var(--brown); }
-        .pill.bagel { background: var(--peach); color: var(--brown); }
+        .pill.cookies {
+            background: #EFEBE4;
+            color: var(--brown);
+            border-color: var(--brown);
+        }
+
+        .pill.cake {
+            background: var(--sky);
+            color: var(--brown);
+        }
+
+        .pill.bretzel {
+            background: #D1C4E9;
+            color: var(--brown);
+        }
+
+        .pill.pastries {
+            background: #F5F5F5;
+            color: var(--brown);
+        }
+
+        .pill.croissant {
+            background: var(--yellow);
+            color: var(--brown);
+        }
+
+        .pill.bagel {
+            background: var(--peach);
+            color: var(--brown);
+        }
 
         .products-grid {
             display: grid;
@@ -557,9 +598,17 @@
             transform: scale(1.1);
         }
 
-        .product-card:nth-child(1) .product-img { background: var(--peach); }
-        .product-card:nth-child(2) .product-img { background: var(--sky); }
-        .product-card:nth-child(3) .product-img { background: var(--yellow); }
+        .product-card:nth-child(1) .product-img {
+            background: var(--peach);
+        }
+
+        .product-card:nth-child(2) .product-img {
+            background: var(--sky);
+        }
+
+        .product-card:nth-child(3) .product-img {
+            background: var(--yellow);
+        }
 
         .product-title {
             font-weight: bold;
@@ -580,14 +629,19 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            border: 1px solid rgba(0,0,0,0.1);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             z-index: 10;
             font-weight: bold;
         }
 
-        .arrow-prev { left: -20px; }
-        .arrow-next { right: -20px; }
+        .arrow-prev {
+            left: -20px;
+        }
+
+        .arrow-next {
+            right: -20px;
+        }
 
         /* Art Form Section */
         .art-section {
@@ -634,7 +688,7 @@
         }
 
         .art-content p {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             font-size: 16px;
             line-height: 1.5;
             margin-bottom: 30px;
@@ -654,7 +708,7 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-        
+
         .btn-learn:hover {
             transform: translateY(-2px);
             background: white;
@@ -668,7 +722,7 @@
             height: 80px;
             opacity: 0.5;
         }
-        
+
         .decor-dots {
             position: absolute;
             left: 20px;
@@ -678,7 +732,7 @@
             flex-direction: column;
             gap: 10px;
         }
-        
+
         .decor-dots span {
             width: 4px;
             height: 15px;
@@ -688,22 +742,33 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero, .delight-section, .art-section {
+
+            .hero,
+            .delight-section,
+            .art-section {
                 grid-template-columns: 1fr;
             }
-            .hero-text h1, .delight-text h2, .products-header h2, .art-content h2 {
+
+            .hero-text h1,
+            .delight-text h2,
+            .products-header h2,
+            .art-content h2 {
                 font-size: 48px;
             }
+
             .nav-center {
                 display: none;
             }
+
             .products-grid {
                 grid-template-columns: 1fr;
             }
+
             .delight-image {
                 width: 100%;
                 margin-left: 0;
             }
+
             .art-image {
                 padding: 20px;
             }
