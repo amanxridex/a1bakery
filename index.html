@@ -222,15 +222,27 @@
             </div>
         </section>
 
-        <!-- Featured Products -->
-        <section class="featured-section">
+        <!-- Featured Products (Best Sellers) -->
+        <section class="featured-slider-section">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Best Sellers</span>
-                    <h2 class="section-title">Customer Favorites</h2>
-                    <p class="section-desc">Our most loved creations, baked fresh every single day</p>
+                <div class="carousel-header centered">
+                    <h2 class="carousel-title">Treats for any Occasion</h2>
+                    <p class="carousel-desc">We've got you covered for any holiday, special occasion, or cause for celebration.</p>
+                    <div class="header-actions">
+                        <a href="menu.html" class="view-more-link">VIEW MORE</a>
+                    </div>
                 </div>
-                <div class="products-grid" id="featuredProducts"></div>
+                
+                <div class="featured-slider-wrapper">
+                    <div class="featured-slider" id="featuredSlider">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="slider-nav-arrows">
+                    <button class="arrow-btn prev-fav" id="prevFav"><i class="fas fa-chevron-left"></i></button>
+                    <button class="arrow-btn next-fav" id="nextFav"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
         </section>
 

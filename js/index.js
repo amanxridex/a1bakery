@@ -107,5 +107,30 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // ========================================
+    // FEATURED PRODUCTS SLIDER
+    // ========================================
+    const favSlider = document.getElementById('featuredSlider');
+    const prevFavBtn = document.getElementById('prevFav');
+    const nextFavBtn = document.getElementById('nextFav');
+    const favWrapper = document.querySelector('.featured-slider-wrapper');
+
+    if (favSlider && prevFavBtn && nextFavBtn) {
+        const scrollAmount = 310; // Card width (280) + gap (30)
+
+        nextFavBtn.addEventListener('click', () => {
+            favWrapper.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        prevFavBtn.addEventListener('click', () => {
+            favWrapper.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
 

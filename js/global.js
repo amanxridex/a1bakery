@@ -444,7 +444,7 @@ function createProductCard(product) {
 }
 
 function renderFeaturedProducts() {
-    const container = document.getElementById('featuredProducts');
+    const container = document.getElementById('featuredSlider');
     if (!container) return;
 
     const featured = products.slice(0, 6);
