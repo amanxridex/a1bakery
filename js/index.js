@@ -119,17 +119,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollAmount = 310; // Card width (280) + gap (30)
 
         nextFavBtn.addEventListener('click', () => {
-            favWrapper.scrollBy({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
+            const isAtEnd = favWrapper.scrollLeft + favWrapper.offsetWidth >= favWrapper.scrollWidth - 10;
+            if (isAtEnd) {
+                favWrapper.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                favWrapper.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
         });
 
         prevFavBtn.addEventListener('click', () => {
-            favWrapper.scrollBy({
-                left: -scrollAmount,
-                behavior: 'smooth'
-            });
+            const isAtStart = favWrapper.scrollLeft <= 10;
+            if (isAtStart) {
+                favWrapper.scrollTo({
+                    left: favWrapper.scrollWidth,
+                    behavior: 'smooth'
+                });
+            } else {
+                favWrapper.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
         });
     }
 });
