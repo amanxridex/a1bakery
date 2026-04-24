@@ -632,13 +632,8 @@ img {
    PAGES
 ======================================== */
 .page {
-    display: none;
-    min-height: 100vh;
-}
-
-.page.active {
     display: block;
-    animation: fadeIn 0.5s ease;
+    min-height: 100vh;
 }
 
 @keyframes fadeIn {
