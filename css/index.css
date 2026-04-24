@@ -1459,15 +1459,14 @@
             font-size: 14px;
         }
 
-        /* Responsive - Preserving Horizontal Layout */
+        /* Responsive - Premium Stacked Layout */
         @media (max-width: 1024px) {
             nav {
-                padding: 15px 20px;
+                padding: 15px 30px;
             }
 
-            .logo {
-                font-size: 14px; /* Shrunk logo for mobile */
-                white-space: nowrap;
+            .logo img {
+                height: 60px;
             }
 
             .nav-center,
@@ -1480,237 +1479,356 @@
                 display: flex;
             }
 
-            .nav-right .start-btn {
-                padding: 8px 16px;
-                font-size: 12px;
-            }
-
             .hero-wrapper {
                 padding: 20px;
             }
 
-            .hero-box {
-                padding: 20px 15px; /* Smaller card padding */
-            }
-
             .hero-header-top h1 {
-                font-size: 7.3vw; /* Increased fluid font */
-                margin-bottom: 35px; /* Increased vertical gap */
-                white-space: nowrap; /* Force one line */
-            }
-
-            .hero-tag {
-                padding: 3px 8px;
-                font-size: 8px;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr 1fr; /* Keep 2 columns */
-                gap: 25px; /* Increased column gap */
-                align-items: flex-start; /* Align text with top of image */
-            }
-
-            .hero-subtitle {
-                font-size: 18px; /* Shrunk font */
-                margin-bottom: 10px;
-            }
-
-            .fresh-badge {
-                font-size: 10px;
-                padding: 3px 8px;
-            }
-
-            .hero-desc {
-                font-size: 11px; /* Shrunk description */
-                margin-bottom: 20px;
-            }
-
-            .hero-btns {
-                gap: 10px;
-            }
-
-            .btn-primary {
-                padding: 10px 20px; /* Smaller button */
-                font-size: 12px;
-            }
-
-            .btn-secondary {
-                font-size: 12px;
+                font-size: 8vw;
             }
 
             .hero-image {
-                height: 180px; /* Shrunk image height */
+                height: 250px;
+            }
+
+            .delight-section {
+                padding: 60px 30px;
+            }
+
+            .products-section {
+                padding: 60px 30px;
+            }
+
+            .special-section {
+                padding: 60px 30px;
+            }
+
+            .reviews-section {
+                padding: 0 30px;
+            }
+
+            .site-footer {
+                padding: 0 30px;
+            }
+        }
+
+        /* Mobile View (max-width: 768px) */
+        @media (max-width: 768px) {
+            /* General */
+            nav {
+                padding: 15px 20px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            /* Hero Section */
+            .hero-box {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+
+            .hero-header-top h1 {
+                font-size: 11vw;
+                line-height: 1.1;
+                margin-bottom: 30px;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .steam-icon-heading {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero-left {
+                order: 2;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-right {
+                order: 1;
+            }
+
+            .hero-subtitle {
+                font-size: 22px;
+                max-width: 100%;
+            }
+
+            .hero-desc {
+                font-size: 15px;
+                max-width: 100%;
+                margin: 0 auto 30px;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .hero-image {
+                height: 300px;
+                border-radius: 20px;
+            }
+
+            .cookie-doodle {
+                width: 60px;
+                height: 60px;
+                bottom: -20px;
+                right: -10px;
             }
 
             /* Delight Section */
             .delight-section {
-                grid-template-columns: 1fr 1fr; /* Maintain horizontal */
-                gap: 20px;
-                padding: 40px 20px;
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 60px 20px;
             }
 
             .delight-image {
-                height: 250px;
+                height: 350px;
                 width: 100%;
                 margin-left: 0;
             }
 
             .family-sticker {
-                width: 80px;
-                height: 80px;
-                top: -10px;
+                width: 100px;
+                height: 100px;
+                top: -20px;
                 left: -10px;
-                font-size: 10px;
+                font-size: 12px;
             }
 
             .family-sticker .sticker-cookie {
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .delight-text {
+                padding-right: 0;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
             .delight-text h2 {
-                font-size: 32px;
+                font-size: 40px;
+            }
+
+            .delight-desc {
+                font-size: 16px;
+                max-width: 100%;
             }
 
             .featured-card {
-                gap: 10px;
-            }
-
-            .featured-details h4 {
-                font-size: 16px;
-            }
-
-            .featured-price {
-                font-size: 20px;
-                padding-left: 10px;
+                background: var(--peach);
+                padding: 15px;
+                border-radius: 20px;
+                text-align: left;
+                width: 100%;
             }
 
             /* Products Section */
             .products-section {
-                padding: 40px 20px;
+                padding: 60px 20px;
+            }
+
+            .products-header {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+                margin-bottom: 30px;
             }
 
             .products-header h2 {
-                font-size: 32px;
+                font-size: 36px;
+            }
+
+            .pills-container {
+                overflow-x: auto;
+                width: 100%;
+                padding-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            
+            .pills-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            .products-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
             }
 
             .product-card {
-                flex: 0 0 220px; /* Slightly smaller cards */
+                flex: none;
+                width: 100%;
             }
 
             .product-img {
-                height: 180px;
-                padding: 15px;
+                height: 280px;
+            }
+
+            .product-name {
+                font-size: 22px;
+            }
+
+            .product-price {
+                font-size: 20px;
             }
 
             /* Art Section */
             .art-section {
-                grid-template-columns: 1fr 1.2fr; /* Maintain horizontal */
+                grid-template-columns: 1fr;
                 margin: 20px;
-                border-radius: 20px;
+                border-radius: 30px;
             }
 
             .art-image {
-                padding: 15px;
-                height: 200px;
-            }
-
-            .art-content {
+                height: 300px;
                 padding: 20px;
             }
 
+            .art-content {
+                padding: 30px 20px;
+                text-align: center;
+                align-items: center;
+            }
+
             .art-content h2 {
-                font-size: 24px;
-                letter-spacing: 1px;
+                font-size: 32px;
             }
 
             .art-content p {
-                font-size: 12px;
+                font-size: 16px;
                 max-width: 100%;
             }
 
-            .btn-learn {
-                padding: 8px 20px;
-                font-size: 12px;
+            /* Special Items Section */
+            .special-section {
+                padding: 60px 20px;
             }
 
-            /* Special Section Mobile */
-            .special-section {
-                padding: 40px 20px;
-            }
             .special-header {
                 flex-direction: column;
+                align-items: flex-start;
                 gap: 20px;
             }
+
             .special-header h2 {
-                font-size: 32px;
-            }
-            .special-grid {
-                grid-template-columns: 1fr;
-            }
-            .special-card-large, .special-card-small {
-                height: 300px;
-            }
-            .special-card-large.special-chef {
-                height: 400px;
-            }
-            .special-text-card h3 {
-                font-size: 22px;
+                font-size: 40px;
             }
 
-            /* Reviews Mobile */
+            .special-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .special-card-large, .special-card-small {
+                height: 350px;
+            }
+
+            .special-card-large.special-chef {
+                height: 450px;
+            }
+
+            /* Reviews Section */
             .reviews-section {
                 padding: 0 20px;
+                margin-top: 60px;
             }
+
             .reviews-container {
                 flex-direction: column;
                 padding: 40px 20px;
                 gap: 40px;
+                border-radius: 30px;
             }
+
             .reviews-left h2 {
-                font-size: 36px;
+                font-size: 40px;
+                text-align: center;
             }
+
+            .reviews-left-bottom {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+
             .reviews-divider {
                 width: 100%;
                 height: 1px;
                 margin: 0;
             }
-            .tags-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .reviews-left-bottom {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
+
+            .reviews-right {
+                align-items: center;
+                text-align: center;
             }
 
-            /* Footer Mobile */
+            .tags-grid {
+                grid-template-columns: repeat(2, 1fr);
+                width: 100%;
+            }
+
+            /* Footer Section */
             .site-footer {
                 padding: 0 20px;
-                margin-top: 40px;
+                margin-top: 60px;
             }
+
             .footer-top {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 30px;
                 padding-bottom: 40px;
             }
+
             .footer-top h2 {
-                font-size: 32px;
+                font-size: 40px;
             }
+
+            .newsletter-form {
+                width: 100%;
+            }
+
             .newsletter-form input {
                 width: 100%;
-                max-width: 250px;
+                max-width: none;
             }
+
             .footer-middle {
                 flex-direction: column;
                 gap: 40px;
                 padding: 40px 0;
             }
+
+            .footer-col-main {
+                max-width: 100%;
+            }
+
             .footer-col-links {
                 flex-wrap: wrap;
                 gap: 40px;
+                justify-content: space-between;
             }
+
+            .link-group {
+                min-width: 120px;
+            }
+
             .footer-bottom {
                 flex-direction: column;
                 align-items: center;
@@ -1719,29 +1837,34 @@
             }
         }
 
-        /* Extreme Small Screens */
+        /* Extreme Small Screens (max-width: 480px) */
         @media (max-width: 480px) {
             .hero-header-top h1 {
-                font-size: 10vw;
-            }
-            
-            .hero-content {
-                gap: 10px;
+                font-size: 13vw;
             }
 
             .hero-subtitle {
-                font-size: 18px;
+                font-size: 20px;
             }
 
             .delight-text h2 {
-                font-size: 22px;
+                font-size: 32px;
             }
 
-            .delight-desc {
-                font-size: 11px;
+            .special-header h2,
+            .reviews-left h2,
+            .footer-top h2 {
+                font-size: 32px;
             }
 
-            .art-content h2 {
-                font-size: 18px;
+            .hero-btns {
+                flex-direction: column;
+                width: 100%;
+                gap: 15px;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
             }
         }
