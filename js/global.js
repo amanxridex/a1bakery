@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('heroParticles')) initParticles();
     if (document.getElementById('testimonialsSlider')) initTestimonials();
     if (document.querySelector('.stat-num')) initCounters();
-    if (document.getElementById('featuredProducts')) renderFeaturedProducts();
+    if (document.getElementById('featuredSlider')) renderFeaturedProducts();
     
     if (document.getElementById('menuProducts')) {
         const urlParams = new URLSearchParams(window.location.search);
