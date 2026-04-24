@@ -367,23 +367,23 @@
 
 .categories-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 40px;
-    gap: 40px;
+    position: relative;
 }
 
 .header-left {
     max-width: 800px;
+    text-align: center;
 }
 
 .carousel-title {
     font-family: 'Playfair Display', serif;
-    font-size: 48px;
+    font-size: 56px;
     font-weight: 700;
     color: #00221C;
     margin-bottom: 15px;
-    text-align: center;
 }
 
 .carousel-desc {
@@ -392,29 +392,21 @@
     color: #4A4A4A;
     line-height: 1.6;
     margin-bottom: 25px;
-    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header-actions {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.view-more-link {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    color: #00221C;
-    text-decoration: underline;
-    letter-spacing: 1px;
-    transition: var(--transition);
+    margin-bottom: 20px;
 }
 
 .carousel-controls {
     display: flex;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 12px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .arrow-btn {
