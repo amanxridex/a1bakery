@@ -534,6 +534,10 @@
 
         .delight-text {
             padding-right: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .delight-text h2 {
@@ -542,16 +546,6 @@
             color: var(--brown);
             margin-bottom: 30px;
             text-transform: uppercase;
-        }
-
-        .delight-text h2 span {
-            display: inline-block;
-            vertical-align: middle;
-            width: 40px;
-            height: 40px;
-            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="%23FFAB91" /><circle cx="35" cy="40" r="6" fill="%233E2723" /><circle cx="60" cy="35" r="6" fill="%233E2723" /><circle cx="55" cy="65" r="8" fill="%233E2723" /><circle cx="35" cy="65" r="5" fill="%233E2723" /><circle cx="70" cy="55" r="5" fill="%233E2723" /></svg>') no-repeat center center;
-            background-size: contain;
-            margin: 0 10px;
         }
 
         .featured-item-title {
