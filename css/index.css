@@ -4,8 +4,7 @@
 .hero-section {
     position: relative;
     width: 100%;
-    height: calc(100vh - 120px);
-    min-height: 600px;
+    height: 600px;
     background: #FDF5F7;
     overflow: hidden;
 }
@@ -54,7 +53,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 80px;
     display: flex;
     justify-content: flex-start;
 }
@@ -62,17 +61,17 @@
 .scalloped-box {
     background: rgba(240, 223, 242, 0.95);
     backdrop-filter: blur(10px);
-    padding: 100px 60px;
+    padding: 60px 40px;
     width: 100%;
-    max-width: 600px;
-    border-radius: 80px;
+    max-width: 480px;
+    border-radius: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 24px;
+    gap: 20px;
     position: relative;
-    box-shadow: 0 20px 50px rgba(74, 30, 81, 0.15);
+    box-shadow: 0 15px 40px rgba(74, 30, 81, 0.12);
     animation: fadeInScale 1s ease-out;
 }
 
@@ -104,33 +103,33 @@
 
 .slide-title {
     font-family: 'Playfair Display', serif;
-    font-size: 64px;
+    font-size: 48px;
     font-weight: 700;
     color: #4A1E51;
     line-height: 1.1;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .slide-text {
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #4A1E51;
-    line-height: 1.6;
-    max-width: 400px;
-    margin-bottom: 30px;
+    line-height: 1.5;
+    max-width: 340px;
+    margin-bottom: 25px;
 }
 
 .notched-btn {
     display: inline-block;
     background: #4A1E51;
     color: var(--white);
-    padding: 18px 45px;
+    padding: 15px 35px;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: var(--transition);
-    clip-path: polygon(10% 0%, 90% 0%, 100% 25%, 100% 75%, 90% 100%, 10% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(8% 0%, 92% 0%, 100% 25%, 100% 75%, 92% 100%, 8% 100%, 0% 75%, 0% 25%);
 }
 
 .notched-btn:hover {
@@ -139,24 +138,24 @@
 }
 
 .slider-controls {
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .slider-arrow {
     background: #00221C;
     color: var(--white);
-    width: 45px;
-    height: 45px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 14px;
     transition: var(--transition);
 }
 
