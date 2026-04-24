@@ -1580,7 +1580,7 @@
                 gap: 30px;
             }
 
-            .hero-left {
+            .hero-text {
                 order: 2;
                 text-align: center;
                 display: flex;
@@ -1588,7 +1588,7 @@
                 align-items: center;
             }
 
-            .hero-right {
+            .hero-image {
                 order: 1;
             }
 
