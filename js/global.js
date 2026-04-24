@@ -1,5 +1,5 @@
 // ========================================
-// MAISON BOULANGERIE - MAIN JAVASCRIPT
+// A1 BAKERY - MAIN JAVASCRIPT
 // Canada's Finest Bakery Chain
 // ========================================
 
@@ -206,7 +206,7 @@ const products = [
 ];
 
 // Cart State
-let cart = JSON.parse(localStorage.getItem('maison_cart')) || [];
+let cart = JSON.parse(localStorage.getItem('a1_cart')) || [];
 
 // DOM Elements
 const navbar = document.getElementById('navbar');
@@ -261,8 +261,8 @@ document.addEventListener('DOMContentLoaded', () => {
         initScrollEffects();
     }
     
-    if (document.getElementById('orderNumber') && localStorage.getItem('maison_last_order')) {
-        document.getElementById('orderNumber').textContent = localStorage.getItem('maison_last_order');
+    if (document.getElementById('orderNumber') && localStorage.getItem('a1_last_order')) {
+        document.getElementById('orderNumber').textContent = localStorage.getItem('a1_last_order');
     }
 });
 
@@ -572,7 +572,7 @@ function updateQuantity(productId, change) {
 }
 
 function saveCart() {
-    localStorage.setItem('maison_cart', JSON.stringify(cart));
+    localStorage.setItem('a1_cart', JSON.stringify(cart));
 }
 
 function updateCart() {
@@ -765,8 +765,8 @@ function initEventListeners() {
         }
 
         // Generate order number
-        const orderNum = '#MB-' + Date.now().toString().slice(-6);
-        localStorage.setItem('maison_last_order', orderNum);
+        const orderNum = '#A1-' + Date.now().toString().slice(-6);
+        localStorage.setItem('a1_last_order', orderNum);
 
         // Clear cart
         cart = [];
