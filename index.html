@@ -165,70 +165,57 @@
         <!-- Categories Section -->
         <section class="categories-section">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Our Collection</span>
-                    <h2 class="section-title">Browse by Category</h2>
-                    <p class="section-desc">From flaky croissants to decadent cakes, find your perfect treat</p>
+                <div class="categories-header">
+                    <div class="header-left">
+                        <h2 class="carousel-title">Our Collection</h2>
+                        <p class="carousel-desc">For more than 50 years, A1 Bakery has been making Canada's favorite baked goods the old-fashioned way: from scratch, in small batches, and using the finest ingredients.</p>
+                        <div class="header-actions">
+                            <a href="menu.html" class="view-more-link">VIEW MORE</a>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="arrow-btn prev-cat" id="prevCat"><i class="fas fa-chevron-left"></i></button>
+                        <button class="arrow-btn next-cat" id="nextCat"><i class="fas fa-chevron-right"></i></button>
+                    </div>
                 </div>
-                <div class="categories-grid">
-                    <div class="category-card" data-category="bread">
-                        <div class="category-img">
-                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=600" alt="Bread">
+
+                <div class="categories-slider-wrapper">
+                    <div class="categories-slider" id="categoriesSlider">
+                        <div class="category-card" data-category="bread">
+                            <div class="category-img">
+                                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=600" alt="Bread">
+                            </div>
+                            <h3 class="category-title">Artisan Breads</h3>
                         </div>
-                        <div class="category-info">
-                            <h3>Artisan Breads</h3>
-                            <p>24 Varieties</p>
-                            <i class="fas fa-arrow-right"></i>
+                        <div class="category-card" data-category="pastry">
+                            <div class="category-img">
+                                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038024a?auto=format&fit=crop&q=80&w=600" alt="Pastries">
+                            </div>
+                            <h3 class="category-title">French Pastries</h3>
                         </div>
-                    </div>
-                    <div class="category-card" data-category="pastry">
-                        <div class="category-img">
-                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038024a?auto=format&fit=crop&q=80&w=600" alt="Pastries">
+                        <div class="category-card" data-category="cake">
+                            <div class="category-img">
+                                <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&q=80&w=600" alt="Cakes">
+                            </div>
+                            <h3 class="category-title">Custom Cakes</h3>
                         </div>
-                        <div class="category-info">
-                            <h3>French Pastries</h3>
-                            <p>18 Varieties</p>
-                            <i class="fas fa-arrow-right"></i>
+                        <div class="category-card" data-category="cookie">
+                            <div class="category-img">
+                                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=600" alt="Cookies">
+                            </div>
+                            <h3 class="category-title">Gourmet Cookies</h3>
                         </div>
-                    </div>
-                    <div class="category-card" data-category="cake">
-                        <div class="category-img">
-                            <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&q=80&w=600" alt="Cakes">
+                        <div class="category-card" data-category="donut">
+                            <div class="category-img">
+                                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400" alt="Donuts">
+                            </div>
+                            <h3 class="category-title">Fresh Donuts</h3>
                         </div>
-                        <div class="category-info">
-                            <h3>Custom Cakes</h3>
-                            <p>32 Varieties</p>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="category-card" data-category="cookie">
-                        <div class="category-img">
-                            <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400" alt="Cookies">
-                        </div>
-                        <div class="category-info">
-                            <h3>Gourmet Cookies</h3>
-                            <p>15 Varieties</p>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="category-card" data-category="donut">
-                        <div class="category-img">
-                            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400" alt="Donuts">
-                        </div>
-                        <div class="category-info">
-                            <h3>Donuts & Rings</h3>
-                            <p>20 Varieties</p>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="category-card" data-category="pie">
-                        <div class="category-img">
-                            <img src="https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=400" alt="Pies">
-                        </div>
-                        <div class="category-info">
-                            <h3>Classic Pies</h3>
-                            <p>12 Varieties</p>
-                            <i class="fas fa-arrow-right"></i>
+                        <div class="category-card" data-category="pie">
+                            <div class="category-img">
+                                <img src="https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=400" alt="Pies">
+                            </div>
+                            <h3 class="category-title">Classic Pies</h3>
                         </div>
                     </div>
                 </div>

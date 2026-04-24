@@ -81,4 +81,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial Start
     startAutoSlide();
+
+    // ========================================
+    // CATEGORIES SLIDER (CAROUSEL)
+    // ========================================
+    const catSlider = document.getElementById('categoriesSlider');
+    const prevCatBtn = document.getElementById('prevCat');
+    const nextCatBtn = document.getElementById('nextCat');
+    const wrapper = document.querySelector('.categories-slider-wrapper');
+
+    if (catSlider && prevCatBtn && nextCatBtn) {
+        const scrollAmount = 330; // Card width (300) + gap (30)
+
+        nextCatBtn.addEventListener('click', () => {
+            wrapper.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        prevCatBtn.addEventListener('click', () => {
+            wrapper.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
+
