@@ -246,3 +246,149 @@ gsap.from(".site-footer > div", {
     stagger: 0.2,
     ease: "power3.out"
 });
+
+// 8. Custom GSAP Cursor
+const cursor = document.querySelector('.custom-cursor');
+
+if (cursor) {
+    // QuickSetter is much more performant for mouse movement tracking
+    const xTo = gsap.quickTo(cursor, "x", {duration: 0.4, ease: "power3"});
+    const yTo = gsap.quickTo(cursor, "y", {duration: 0.4, ease: "power3"});
+
+    window.addEventListener('mousemove', (e) => {
+        // Show cursor on first move
+        if (gsap.getProperty(cursor, "opacity") === 0) {
+            gsap.to(cursor, { opacity: 1, duration: 0.3 });
+        }
+        
+        // Use quickTo for buttery smooth trailing
+        xTo(e.clientX - 20); // Center the 40px cursor
+        yTo(e.clientY - 20);
+    });
+
+    // Hover effects on interactable elements
+    const hoverElements = document.querySelectorAll('a, button, input, .product-card, .pill, .review-tag, .hamburger, .cart-btn, .menu-close, .has-dropdown');
+    
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            gsap.to(cursor, {
+                scale: 1.5,
+                rotation: 15,
+                duration: 0.3,
+                ease: "back.out(1.7)"
+            });
+        });
+        
+        el.addEventListener('mouseleave', () => {
+            gsap.to(cursor, {
+                scale: 1,
+                rotation: 0,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+    });
+
+    // Click animation (Cookie Break Effect)
+    window.addEventListener('mousedown', (e) => {
+        const isMobile = window.getComputedStyle(cursor).display === 'none';
+
+        if (isMobile) {
+            // Mobile: Spawn a temporary cookie just to break it since there's no cursor
+            const tempCookie = document.createElement('div');
+            tempCookie.innerText = '🍪';
+            tempCookie.style.position = 'fixed';
+            tempCookie.style.left = e.clientX + 'px';
+            tempCookie.style.top = e.clientY + 'px';
+            tempCookie.style.fontSize = '50px';
+            tempCookie.style.pointerEvents = 'none';
+            tempCookie.style.zIndex = 99999;
+            tempCookie.style.transform = 'translate(-50%, -50%)';
+            document.body.appendChild(tempCookie);
+
+            gsap.to(tempCookie, {
+                scale: 0,
+                rotation: -20,
+                duration: 0.1,
+                onComplete: () => tempCookie.remove()
+            });
+        } else {
+            // Desktop: Shrink the main cookie cursor to simulate breaking
+            gsap.to(cursor, {
+                scale: 0,
+                rotation: -20,
+                duration: 0.1
+            });
+        }
+
+        // Spawn crumbs
+        for (let i = 0; i < 8; i++) {
+            const crumb = document.createElement('div');
+            // Randomly pick a crumb character
+            const crumbs = ['🟤', '🤎', '✨', '•'];
+            crumb.innerText = crumbs[Math.floor(Math.random() * crumbs.length)];
+            crumb.style.position = 'fixed';
+            crumb.style.left = e.clientX + 'px';
+            crumb.style.top = e.clientY + 'px';
+            crumb.style.fontSize = (12 + Math.random() * 12) + 'px';
+            crumb.style.pointerEvents = 'none';
+            crumb.style.zIndex = 99999;
+            crumb.style.transform = 'translate(-50%, -50%)';
+            document.body.appendChild(crumb);
+
+            // Animate crumb flying outwards
+            const angle = (Math.PI * 2 / 8) * i + (Math.random() * 0.5);
+            const distance = 40 + Math.random() * 50;
+            
+            gsap.to(crumb, {
+                x: Math.cos(angle) * distance,
+                y: Math.sin(angle) * distance + 30, // Gravity
+                rotation: Math.random() * 360,
+                opacity: 0,
+                duration: 0.5 + Math.random() * 0.4,
+                ease: "power3.out",
+                onComplete: () => crumb.remove()
+            });
+        }
+    });
+
+    window.addEventListener('mouseup', () => {
+        const isMobile = window.getComputedStyle(cursor).display === 'none';
+        
+        if (!isMobile) {
+            // Regenerate the desktop cookie
+            gsap.to(cursor, {
+                scale: 1.2, // Bounce back slightly larger
+                rotation: 0,
+                duration: 0.3,
+                ease: "back.out(2)"
+            });
+            
+            // Return to normal
+            gsap.to(cursor, {
+                scale: 1,
+                delay: 0.3,
+                duration: 0.2
+            });
+        }
+    });
+}
+
+// Global Link Interception for Cookie Break Delay
+// This ensures that when a user clicks a link, the page waits for the animation to finish before loading.
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        const targetUrl = link.getAttribute('href');
+        const target = link.getAttribute('target');
+
+        // Only delay real links that navigate to another page (ignore hash links, email, phone)
+        if (targetUrl && targetUrl !== '#' && !targetUrl.startsWith('#') && target !== '_blank' && !targetUrl.startsWith('mailto:') && !targetUrl.startsWith('tel:')) {
+            e.preventDefault();
+            
+            // Wait 500ms for the GSAP crumb explosion to play out before loading the next page
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 500);
+        }
+    });
+});
