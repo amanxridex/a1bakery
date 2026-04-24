@@ -12,16 +12,15 @@
 .hero-slider {
     width: 100%;
     height: 100%;
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .slide {
-    display: none;
+    flex: 0 0 100%;
     width: 100%;
     height: 100%;
     position: relative;
-}
-
-.slide.active {
     display: flex;
     align-items: center;
 }

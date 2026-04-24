@@ -11,18 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
     let slideInterval;
 
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
+    const heroSlider = document.querySelector('.hero-slider');
 
+    function showSlide(index) {
         // Handle wrap-around
         if (index >= slides.length) currentSlide = 0;
         else if (index < 0) currentSlide = slides.length - 1;
         else currentSlide = index;
 
-        // Note: dots are duplicated across slides in the current HTML structure
-        // We need to activate all dots that correspond to the current index
-        slides[currentSlide].classList.add('active');
+        // Apply sliding transform
+        if (heroSlider) {
+            heroSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
         
         // Update dots in ALL slides to stay in sync
         const allDots = document.querySelectorAll('.slider-dots');
