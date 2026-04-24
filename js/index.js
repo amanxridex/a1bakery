@@ -22,37 +22,33 @@ document.querySelectorAll('.menu-links a').forEach(link => {
     });
 });
 
-// Smooth Scrolling with Lenis
-const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: 'vertical',
-    gestureDirection: 'vertical',
-    smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
-});
+// Smooth Scrolling with Lenis (Desktop Only)
+let lenis;
+const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 1024;
 
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
+if (!isMobileDevice) {
+    lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        infinite: false,
+    });
+
+    // Sync ScrollTrigger with Lenis
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0, 0);
 }
-
-requestAnimationFrame(raf);
 
 // GSAP Animations
 gsap.registerPlugin(ScrollTrigger);
-
-// Update ScrollTrigger when Lenis scrolls
-lenis.on('scroll', ScrollTrigger.update);
-
-gsap.ticker.add((time) => {
-    lenis.raf(time * 1000)
-});
-
-gsap.ticker.lagSmoothing(0, 0);
 
 // Global Toggle Actions for ScrollTrigger
 // "play none none reverse" means: play on enter, reverse on leave back
