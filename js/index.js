@@ -76,6 +76,30 @@ gsap.from(".steam-icon-heading", {
     ease: "back.out(1.7)"
 });
 
+// Throw in the TASTY tag
+gsap.from(".hero-tag.tasty", {
+    x: -200,
+    y: -200,
+    rotation: -270,
+    scale: 0,
+    opacity: 0,
+    duration: 1.2,
+    ease: "back.out(2)",
+    delay: 0.6
+});
+
+// Throw in the CRUNCHY tag
+gsap.from(".hero-tag.crunchy", {
+    x: 200,
+    y: 200,
+    rotation: 270,
+    scale: 0,
+    opacity: 0,
+    duration: 1.2,
+    ease: "back.out(2)",
+    delay: 0.8
+});
+
 gsap.from(".hero-subtitle, .hero-desc, .hero-btns", {
     y: 30,
     opacity: 0,

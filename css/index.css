@@ -23,10 +23,12 @@
             --text-light: #6D4C41;
         }
 
-        body {
+        html, body {
             background: var(--cream);
             color: var(--text);
             overflow-x: hidden;
+            width: 100%;
+            position: relative;
             cursor: none;
         }
 
@@ -1644,7 +1646,7 @@
                 width: 100px;
                 height: 100px;
                 top: -20px;
-                left: -10px;
+                left: 10px;
                 font-size: 12px;
             }
 
