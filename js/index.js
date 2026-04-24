@@ -1,1 +1,84 @@
-// Page specific logic for index.html
+// ========================================
+// A1 BAKERY - HERO SLIDER LOGIC
+// ========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    const prevBtns = document.querySelectorAll('.slider-arrow.prev');
+    const nextBtns = document.querySelectorAll('.slider-arrow.next');
+    const dots = document.querySelectorAll('.dot');
+    
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        // Handle wrap-around
+        if (index >= slides.length) currentSlide = 0;
+        else if (index < 0) currentSlide = slides.length - 1;
+        else currentSlide = index;
+
+        // Note: dots are duplicated across slides in the current HTML structure
+        // We need to activate all dots that correspond to the current index
+        slides[currentSlide].classList.add('active');
+        
+        // Update dots in ALL slides to stay in sync
+        const allDots = document.querySelectorAll('.slider-dots');
+        allDots.forEach(dotContainer => {
+            const dotsInContainer = dotContainer.querySelectorAll('.dot');
+            dotsInContainer.forEach((dot, i) => {
+                if (i === currentSlide) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+        });
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    function startAutoSlide() {
+        stopAutoSlide();
+        slideInterval = setInterval(nextSlide, 3000);
+    }
+
+    function stopAutoSlide() {
+        if (slideInterval) clearInterval(slideInterval);
+    }
+
+    // Event Listeners
+    nextBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            nextSlide();
+            startAutoSlide(); // Reset timer
+        });
+    });
+
+    prevBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            prevSlide();
+            startAutoSlide(); // Reset timer
+        });
+    });
+
+    // Dots interaction
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            // Each dot container has the same number of dots
+            // The index here is absolute across all containers, but we want the relative index
+            const dotsInContainer = dot.parentElement.querySelectorAll('.dot');
+            const relativeIndex = Array.from(dotsInContainer).indexOf(dot);
+            showSlide(relativeIndex);
+            startAutoSlide();
+        });
+    });
+
+    // Initial Start
+    startAutoSlide();
+});

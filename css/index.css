@@ -75,6 +75,24 @@
     animation: fadeInScale 1s ease-out;
 }
 
+.scalloped-box.box-green {
+    background: #E6F4F1 !important; /* Light mint green */
+    box-shadow: 0 15px 40px rgba(0, 34, 28, 0.1) !important;
+}
+
+.scalloped-box.box-green .slide-title,
+.scalloped-box.box-green .slide-text {
+    color: #00221C !important; /* Dark forest green */
+}
+
+.btn-dark-green {
+    background: #00221C !important;
+}
+
+.btn-dark-green:hover {
+    background: #003D32 !important;
+}
+
 @keyframes fadeInScale {
     from { 
         opacity: 0;
