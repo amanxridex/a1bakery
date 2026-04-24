@@ -1,0 +1,122 @@
+/* ========================================
+   CHECKOUT PAGE
+======================================== */
+.checkout-container {
+    padding: 60px 0;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+}
+
+.checkout-section {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+
+.checkout-section h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--secondary);
+}
+
+.checkout-section h3 i {
+    color: var(--primary);
+}
+
+.payment-methods {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.payment-method {
+    flex: 1;
+    padding: 16px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.payment-method.active,
+.payment-method:hover {
+    border-color: var(--primary);
+    background: var(--primary-light);
+}
+
+.payment-method i {
+    font-size: 24px;
+    margin-bottom: 8px;
+    display: block;
+    color: var(--primary);
+}
+
+.payment-method span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.checkout-summary {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.checkout-summary h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.checkout-items {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.checkout-item span:first-child {
+    color: var(--gray);
+}
+
+.checkout-totals {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.total-row.grand {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--secondary);
+    padding-top: 12px;
+    border-top: 2px solid var(--border);
+}
+

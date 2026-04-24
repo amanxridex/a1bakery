@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Boulangerie | Canada's Finest Bakery</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/success.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-bread-slice"></i>
+                <span>Maison Boulangerie</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Our Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-content">
+            <button class="close-search" id="closeSearch"><i class="fas fa-times"></i></button>
+            <input type="text" placeholder="Search our delicious collection..." id="searchInput">
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Your cart is empty</p>
+                <span>Add some delicious items!</span>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-mobile" id="closeMobile"><i class="fas fa-times"></i></button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Item added to cart!</span>
+    </div>
+
+    
+<!-- ========== ORDER SUCCESS PAGE ========== -->
+    <section class="page active" id="success">
+        <div class="success-container">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h1>Order Placed Successfully!</h1>
+            <p>Thank you for choosing Maison Boulangerie. Your delicious order is being prepared with love.</p>
+            <div class="success-details">
+                <div class="success-detail">
+                    <span>Order Number</span>
+                    <strong id="orderNumber">#MB-2024-001</strong>
+                </div>
+                <div class="success-detail">
+                    <span>Estimated Delivery</span>
+                    <strong>30-45 minutes</strong>
+                </div>
+            </div>
+            <a href="#home" class="btn btn-primary" data-page="home">Continue Shopping</a>
+        </div>
+    </section>
+<!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <i class="fas fa-bread-slice"></i>
+                            <span>Maison Boulangerie</span>
+                        </div>
+                        <p>Canada's premier artisan bakery chain, bringing French baking excellence to every Canadian
+                            home since 1974.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home" data-page="home">Home</a></li>
+                            <li><a href="#menu" data-page="menu">Our Menu</a></li>
+                            <li><a href="#about" data-page="about">About Us</a></li>
+                            <li><a href="#contact" data-page="contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="#menu" data-filter="bread">Artisan Breads</a></li>
+                            <li><a href="#menu" data-filter="pastry">French Pastries</a></li>
+                            <li><a href="#menu" data-filter="cake">Custom Cakes</a></li>
+                            <li><a href="#menu" data-filter="cookie">Gourmet Cookies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Boulangerie Ave, Toronto, ON</p>
+                        <p><i class="fas fa-phone"></i> +1 (416) 555-BAKE</p>
+                        <p><i class="fas fa-envelope"></i> hello@maisonboulangerie.ca</p>
+                        <p><i class="fas fa-clock"></i> Open Daily 6AM - 9PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p> Maison Boulangerie. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of
+                        Service</a></p>
+                <p class="footer-badge"><i class="fas fa-maple-leaf"></i> Proudly Canadian</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="js/global.js"></script>
+    <script src="js/success.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Boulangerie | Canada's Finest Bakery</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-bread-slice"></i>
+                <span>Maison Boulangerie</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Our Menu</a></li>
+                <li><a href="about.html" class="nav-link active">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-content">
+            <button class="close-search" id="closeSearch"><i class="fas fa-times"></i></button>
+            <input type="text" placeholder="Search our delicious collection..." id="searchInput">
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Your cart is empty</p>
+                <span>Add some delicious items!</span>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-mobile" id="closeMobile"><i class="fas fa-times"></i></button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="about.html" class="nav-link active">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Item added to cart!</span>
+    </div>
+
+    
+<!-- ========== ABOUT PAGE ========== -->
+    <section class="page active" id="about">
+        <div class="page-header about-header">
+            <div class="page-header-bg"></div>
+            <div class="page-header-content">
+                <span class="page-tag">Our Story</span>
+                <h1>Maison Boulangerie</h1>
+                <p>Five decades of baking excellence across Canada</p>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <div class="container">
+                <div class="about-story">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=600" alt="Our Bakery">
+                        <div class="experience-badge">
+                            <span>50+</span>
+                            <small>Years</small>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h2>A Legacy of Baking Excellence</h2>
+                        <p>Founded in 1974 by master baker Jean-Pierre Laurent in Montreal, Maison Boulangerie began as
+                            a small corner shop with a big dream: to bring authentic French baking to Canadian homes.
+                        </p>
+                        <p>Today, with over 150 locations from coast to coast, we remain committed to that original
+                            vision. Every loaf, every pastry, every cake is crafted using time-honored techniques passed
+                            down through generations.</p>
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <i class="fas fa-leaf"></i>
+                                <div>
+                                    <h4>Organic Ingredients</h4>
+                                    <p>Sourced from local Canadian farms</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <div>
+                                    <h4>Handcrafted Daily</h4>
+                                    <p>Fresh baked every morning at 4 AM</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-award"></i>
+                                <div>
+                                    <h4>Award Winning</h4>
+                                    <p>15 Canadian Baking Awards</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">Our Team</span>
+                        <h2 class="section-title">Master Bakers</h2>
+                    </div>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="team-img">
+                                <img src="https://images.unsplash.com/photo-1583394293214-28ez8ac94e4a?w=400"
+                                    alt="Chef">
+                            </div>
+                            <h4>Chef Antoine</h4>
+                            <span>Head Baker</span>
+                            <p>30 years of French pastry expertise</p>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-img">
+                                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400"
+                                    alt="Chef">
+                            </div>
+                            <h4>Chef Maria</h4>
+                            <span>Cake Artist</span>
+                            <p>Specializes in custom wedding cakes</p>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-img">
+                                <img src="https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?w=400"
+                                    alt="Chef">
+                            </div>
+                            <h4>Chef David</h4>
+                            <span>Bread Master</span>
+                            <p>Sourdough specialist and innovator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="locations-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">Locations</span>
+                        <h2 class="section-title">Find Us Across Canada</h2>
+                    </div>
+                    <div class="locations-grid">
+                        <div class="location-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Toronto</h4>
+                            <p>45 Locations</p>
+                        </div>
+                        <div class="location-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Vancouver</h4>
+                            <p>32 Locations</p>
+                        </div>
+                        <div class="location-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Montreal</h4>
+                            <p>28 Locations</p>
+                        </div>
+                        <div class="location-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Calgary</h4>
+                            <p>18 Locations</p>
+                        </div>
+                        <div class="location-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Ottawa</h4>
+                            <p>15 Locations</p>
+                        </div>
+                        <div class="location-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Edmonton</h4>
+                            <p>12 Locations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <i class="fas fa-bread-slice"></i>
+                            <span>Maison Boulangerie</span>
+                        </div>
+                        <p>Canada's premier artisan bakery chain, bringing French baking excellence to every Canadian
+                            home since 1974.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home" data-page="home">Home</a></li>
+                            <li><a href="#menu" data-page="menu">Our Menu</a></li>
+                            <li><a href="#about" data-page="about">About Us</a></li>
+                            <li><a href="#contact" data-page="contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="#menu" data-filter="bread">Artisan Breads</a></li>
+                            <li><a href="#menu" data-filter="pastry">French Pastries</a></li>
+                            <li><a href="#menu" data-filter="cake">Custom Cakes</a></li>
+                            <li><a href="#menu" data-filter="cookie">Gourmet Cookies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Boulangerie Ave, Toronto, ON</p>
+                        <p><i class="fas fa-phone"></i> +1 (416) 555-BAKE</p>
+                        <p><i class="fas fa-envelope"></i> hello@maisonboulangerie.ca</p>
+                        <p><i class="fas fa-clock"></i> Open Daily 6AM - 9PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p> Maison Boulangerie. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of
+                        Service</a></p>
+                <p class="footer-badge"><i class="fas fa-maple-leaf"></i> Proudly Canadian</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="js/global.js"></script>
+    <script src="js/about.js"></script>
+</body>
+
+</html>

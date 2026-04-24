@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rollin. &mdash; Bake The Cookies</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">🍪</div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo"><img src="./assets/a-one-logo.png" alt="A1 Bakery"></div>
+        <div class="nav-center">
+            <a href="#">Cake</a>
+            <a href="#">Bakery &#x25BE;</a>
+            <a href="#">About Us</a>
+            <a href="#" class="has-dropdown">Cookies</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="nav-right">
+            <button class="start-btn">GET STARTED</button>
+            <div class="ig-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </div>
+            <!-- Mobile Actions -->
+            <div class="mobile-actions">
+                <div class="cart-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                        <path d="M3 6h18"></path>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                </div>
+                <div class="hamburger" id="hamburgerBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Side Menu -->
+    <div class="mobile-side-menu" id="mobileMenu">
+        <div class="menu-header">
+            <div class="logo"><img src="./assets/a-one-logo.png" alt="A1 Bakery"></div>
+            <div class="menu-close" id="closeMenu">&times;</div>
+        </div>
+        <div class="menu-links">
+            <a href="#">Cake</a>
+            <a href="#">Bakery</a>
+            <a href="#">About Us</a>
+            <a href="#">Cookies</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="menu-footer">
+            <button class="start-btn">GET STARTED</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-wrapper">
+        <div class="hero-box">
+            <div class="hero-header-top">
+                <h1>
+                    <span class="word-wrap">BAKE<span class="hero-tag tasty">TASTY</span></span> <span
+                        class="word-wrap">THE</span> <span class="word-wrap">COOKIES<span
+                            class="hero-tag crunchy">CRUNCHY</span></span>
+                    <svg class="steam-icon-heading" viewBox="0 0 24 24" fill="none" stroke="#FFAB91" stroke-width="2">
+                        <path d="M6 8c0-3 3-3 3-6M12 8c0-3 3-3 3-6M18 8c0-3 3-3 3-6" />
+                    </svg>
+                </h1>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-subtitle">
+                        Premium Bread<br>And Cookies Made<br>From Scratch
+                        <span class="fresh-badge">Fresh</span>
+                    </p>
+                    <p class="hero-desc">We're literally obsessed with giving more of what you love!</p>
+                    <div class="hero-btns">
+                        <button class="btn-primary">
+                            Order Now
+                        </button>
+                        <a href="#" class="btn-secondary">Cooking Blog</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=450&fit=crop"
+                        alt="Fresh baked bread stack">
+                    <svg class="cookie-doodle" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" stroke-dasharray="8 4" fill="none" />
+                        <circle cx="35" cy="40" r="5" fill="#3E2723" />
+                        <circle cx="60" cy="35" r="5" fill="#3E2723" />
+                        <circle cx="55" cy="60" r="5" fill="#3E2723" />
+                        <circle cx="40" cy="65" r="5" fill="#3E2723" />
+                        <circle cx="50" cy="50" r="5" fill="#3E2723" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delight Section -->
+    <section class="delight-section">
+        <div class="delight-image">
+            <img src="./assets/header2c.png" alt="A1 Bakery Delight">
+            <div class="family-sticker">
+                <svg viewBox="0 0 100 100">
+                    <path id="curve" d="M -10,50 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" fill="transparent" />
+                    <text font-size="13">
+                        <textPath href="#curve" startOffset="0%">
+                            Made with love & care ❤️ by the workers of A1 Bakery
+                        </textPath>
+                    </text>
+                </svg>
+                <img src="./assets/cookie.png" alt="Cookie" class="sticker-cookie">
+            </div>
+        </div>
+        <div class="delight-text">
+            <h2>YOUR ONLY DOSE OF DELIGHT</h2>
+            <div class="featured-item-title">Featured item-</div>
+            <div class="featured-card">
+                <div class="featured-img-wrapper">
+                    <img src="./assets/bunspoint.png" alt="Bagel Buns">
+                </div>
+                <div class="featured-details">
+                    <h4>Bagel Buns</h4>
+                    <p>Gluten free</p>
+                </div>
+                <div class="featured-price">$16</div>
+            </div>
+            <p class="delight-desc">All cookies should have a show-stopping German chocolate cake in their repertoire
+                and this is one of our favourites.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="products-header">
+            <h2>PRODUCT WE BAKE HERE DAILY-</h2>
+            <div class="pills-container">
+                <div class="pill cookies">Cookies <span>12</span></div>
+                <div class="pill cake">Cake <span>27</span></div>
+                <div class="pill bretzel">Bretzel <span>0</span></div>
+                <div class="pill pastries">Pastries <span>23</span></div>
+                <div class="pill croissant">Croissant <span>21</span></div>
+                <div class="pill bagel">Bagel <span>13</span></div>
+            </div>
+        </div>
+        <div class="products-container">
+            <button class="arrow-btn arrow-prev">&lt;</button>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1511910849309-0dffb8785146?w=400&h=300&fit=crop"
+                            alt="Bagel with seeds">
+                    </div>
+                    <div class="product-title">BAGEL WITH SEEDS</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=300&fit=crop"
+                            alt="Sliced piece bread">
+                    </div>
+                    <div class="product-title">SLICED PIECE BREAD</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&h=300&fit=crop"
+                            alt="Cookies glucose">
+                    </div>
+                    <div class="product-title">COOKIES GLUCOSE</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=300&fit=crop"
+                            alt="Chocolate Muffin">
+                    </div>
+                    <div class="product-title">CHOCOLATE MUFFIN</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400&h=300&fit=crop"
+                            alt="Fruit Tart">
+                    </div>
+                    <div class="product-title">FRUIT TART</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&h=300&fit=crop"
+                            alt="Sesame Buns">
+                    </div>
+                    <div class="product-title">SESAME BUNS</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1504113888839-1c8eb50233d3?w=400&h=300&fit=crop"
+                            alt="Danish Pastry">
+                    </div>
+                    <div class="product-title">DANISH PASTRY</div>
+                </div>
+            </div>
+            <button class="arrow-btn arrow-next">&gt;</button>
+        </div>
+    </section>
+
+    <!-- Art Form Section -->
+    <section class="art-section">
+        <div class="decor-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="art-image">
+            <div class="slider-track">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop"
+                    alt="Fresh Bread">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=600&fit=crop"
+                    alt="Croissants">
+                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop"
+                    alt="Cookies">
+                <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=600&h=600&fit=crop"
+                    alt="Baker at work">
+                <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&h=600&fit=crop"
+                    alt="Cupcakes">
+                <!-- Clone for loop -->
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop"
+                    alt="Fresh Bread">
+            </div>
+        </div>
+        <div class="art-content">
+            <svg class="decor-lines" viewBox="0 0 100 100" fill="none" stroke="#FFAB91" stroke-width="4"
+                stroke-linecap="round">
+                <path d="M 0,20 Q 50,20 50,70" />
+                <path d="M 20,0 Q 20,50 70,50" />
+                <path d="M 40,-20 Q 40,30 90,30" />
+            </svg>
+            <h2>WHY IS BAKING CONSIDERED AS ART FORM?</h2>
+            <p>Their experience plays a role in the way they work. Bakers use flavours and visual appeal to produce an
+                edible art piece.</p>
+            <button class="btn-learn">LEARN BAKING</button>
+        </div>
+    </section>
+
+    <!-- Special Section -->
+    <section class="special-section">
+        <div class="special-header">
+            <h2>WHY A1 BAKERY'S <svg class="cookie-icon-special" viewBox="0 0 100 100"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="#FFAB91" />
+                    <circle cx="35" cy="40" r="6" fill="#3E2723" />
+                    <circle cx="60" cy="35" r="6" fill="#3E2723" />
+                    <circle cx="55" cy="65" r="8" fill="#3E2723" />
+                    <circle cx="35" cy="65" r="5" fill="#3E2723" />
+                    <circle cx="70" cy="55" r="5" fill="#3E2723" />
+                </svg><br>ITEMS IS SO SPECIAL <svg class="wave-icon" viewBox="0 0 100 20" fill="none" stroke="#64B5F6"
+                    stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M 5,10 Q 15,0 25,10 T 45,10 T 65,10 T 85,10" />
+                </svg><br>TO CUSTOMER?</h2>
+            <div class="special-header-right">
+                <div class="line-divider"></div>
+                <button class="btn-shop-now">SHOP NOW</button>
+            </div>
+        </div>
+        <div class="special-grid">
+            <div class="special-card special-card-large bg-peach">
+                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=800&fit=crop"
+                    alt="Cookies stack" class="main-img">
+                <svg class="cookie-outline" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" stroke-dasharray="4 4" stroke="#3E2723" fill="none"
+                        stroke-width="2" />
+                    <circle cx="35" cy="40" r="4" fill="none" stroke="#3E2723" stroke-width="2" />
+                    <circle cx="60" cy="35" r="3" fill="none" stroke="#3E2723" stroke-width="2" />
+                    <circle cx="55" cy="65" r="5" fill="none" stroke="#3E2723" stroke-width="2" />
+                </svg>
+            </div>
+            <div class="special-middle-col">
+                <div class="special-card special-card-small bg-green special-bread-card">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=400&fit=crop"
+                        alt="Fresh bread">
+                    <div class="badge-icon-circular">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="special-card special-card-small bg-brown special-text-card">
+                    <h3>TASTE THE REAL<br>WHEAT BAKED<br>ITEMS.</h3>
+                    <div class="price-tag">$16</div>
+                    <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&h=400&fit=crop"
+                        alt="Cookies bag" class="corner-img">
+                </div>
+            </div>
+            <div class="special-card special-card-large bg-yellow special-chef">
+                <div class="combo-badge">COMBO</div>
+                <img src="https://images.unsplash.com/photo-1583338917451-face2751d8d5?w=600&h=800&fit=crop" alt="Chef"
+                    class="chef-img">
+                <svg class="bread-outline left" viewBox="0 0 100 100">
+                    <path d="M 20,80 Q 10,50 40,20 Q 70,10 80,40 Q 90,70 60,90 Q 30,100 20,80" fill="none"
+                        stroke="#3E2723" stroke-width="2" />
+                    <line x1="35" y1="35" x2="65" y2="65" stroke="#3E2723" stroke-width="2" />
+                    <line x1="45" y1="30" x2="70" y2="55" stroke="#3E2723" stroke-width="2" />
+                    <line x1="25" y1="45" x2="55" y2="75" stroke="#3E2723" stroke-width="2" />
+                </svg>
+                <div class="testimonial">
+                    <div class="quote-icon">“</div>
+                    <p>Baking is a craft in itself, and we bake these delicious and crumbly flavours bakery items.</p>
+                    <div class="author">— Ashton Cooper</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="reviews-container">
+            <svg class="bg-swirl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 20,50 A 30,30 0 1,1 80,50 A 20,20 0 1,0 40,50 A 10,10 0 1,1 60,50" fill="none" stroke="#FDF08A" stroke-width="12" stroke-linecap="round"/>
+            </svg>
+            <div class="reviews-left">
+                <h2>WITH ENOUGH<br>BUTTER, ANYTHING<br>IS GOOD!</h2>
+                <div class="reviews-left-bottom">
+                    <div class="avatar-container">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="Reviewer" class="reviewer-avatar">
+                    </div>
+                    <p>Our master plan to freshen<br>up a 200-year-old</p>
+                    <a href="#" class="review-link">What we<br>are daring out ?</a>
+                </div>
+            </div>
+            
+            <div class="reviews-divider"></div>
+            
+            <div class="reviews-right">
+                <div class="rating-box">
+                    <span class="rating-number">3.73</span>
+                    <div class="rating-details">
+                        <div class="stars">
+                            <svg viewBox="0 0 24 24" fill="white"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24" fill="white"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24" fill="white"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24" fill="white"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24" fill="white"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p>Based on 4,390 reviews.</p>
+                    </div>
+                </div>
+                
+                <div class="tags-grid">
+                    <div class="review-tag">PLAIN CAKE</div>
+                    <div class="review-tag">CROISSANT</div>
+                    <div class="review-tag">COOKIES</div>
+                    <div class="review-tag">CONES</div>
+                    <div class="review-tag">BRETZEL</div>
+                    <div class="review-tag">BISCUITS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <h2>GET UPDATE ON NEW<br>ITEMS & LATEST NEWS.</h2>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Email Address">
+                <button type="submit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="footer-middle">
+            <div class="footer-col-main">
+                <div class="footer-logo"><img src="./assets/a-one-logo.png" alt="A1 Bakery"></div>
+                <div class="footer-contact">
+                    <p>1075 LORIMAR DRIVE Unit 1-5,<br>Mississauga ON, L5S 1N2</p>
+                    <a href="mailto:info@aonecakes.com">info@aonecakes.com</a>
+                    <a href="tel:+19055642663">1-905-564-2663</a>
+                </div>
+            </div>
+            
+            <div class="footer-col-links">
+                <div class="link-group">
+                    <h4>PAGES</h4>
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Category</a>
+                    <a href="#">Features</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="link-group">
+                    <h4>UTILITY</h4>
+                    <a href="#">Style Guide</a>
+                    <a href="#">Instructions</a>
+                    <a href="#">License</a>
+                    <a href="#">Changelog</a>
+                    <a href="#">404</a>
+                </div>
+                <div class="link-group">
+                    <h4>SOCIALS</h4>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>Copyright © A1 Bakery</p>
+            <p>Designed by social daddy !</p>
+        </div>
+    </footer>
+
+    <!-- Smooth Scrolling (Lenis) & GSAP -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
