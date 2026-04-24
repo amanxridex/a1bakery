@@ -3,6 +3,19 @@
 // Canada's Finest Bakery Chain
 // ========================================
 
+// Download Protection
+document.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+        e.preventDefault();
+    }
+});
+
+document.addEventListener('dragstart', (e) => {
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+        e.preventDefault();
+    }
+});
+
 // Product Data
 const products = [
     {
