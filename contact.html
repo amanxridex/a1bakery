@@ -15,23 +15,30 @@
 
 <body>
 
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <p>ORDER DESSERTS FOR LOCAL PICK UP OR DELIVERY</p>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <i class="fas fa-bread-slice"></i>
-                <span>A1 Bakery</span>
-            </div>
+            <a href="index.html" class="logo">
+                <span class="logo-main">A1 BAKERY</span>
+                <span class="logo-est">EST. 1974</span>
+            </a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Our Menu</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="menu.html">ORDER <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="menu.html">PRODUCTS <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="about.html">HOURS & LOCATIONS <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="about.html">ABOUT US <i class="fas fa-chevron-down"></i></a></li>
             </ul>
             <div class="nav-actions">
+                <a href="menu.html" class="order-asap-btn">ORDER ASAP</a>
                 <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                <button class="user-btn"><i class="far fa-user"></i></button>
                 <button class="cart-btn" id="cartBtn">
-                    <i class="fas fa-shopping-bag"></i>
+                    <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </button>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
