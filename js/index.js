@@ -1,5 +1,5 @@
 // ========================================
-// A1 BAKERY - HERO SLIDER LOGIC
+// A-ONE BAKERY - HERO SLIDER LOGIC
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {

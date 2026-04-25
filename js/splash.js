@@ -1,5 +1,5 @@
 // ========================================
-// A1 BAKERY - SPLASH SCREEN LOGIC
+// A-ONE BAKERY - SPLASH SCREEN LOGIC
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {

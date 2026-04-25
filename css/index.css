@@ -23,6 +23,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    overflow: hidden; /* Prevent zoom leakage */
 }
 
 .hero-image-container {
@@ -31,6 +32,7 @@
     right: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden; /* Contain the heroZoom animation */
 }
 
 .hero-image-container img {
@@ -58,38 +60,24 @@
 }
 
 .scalloped-box {
-    background: rgba(240, 223, 242, 0.95);
-    backdrop-filter: blur(10px);
+    background: var(--white);
     padding: 60px 40px;
     width: 100%;
     max-width: 480px;
-    border-radius: 60px;
+    border-radius: 24px; /* Sleeker border radius */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 20px;
     position: relative;
-    box-shadow: 0 15px 40px rgba(74, 30, 81, 0.12);
+    box-shadow: var(--shadow-lg);
     animation: fadeInScale 1s ease-out;
 }
 
 .scalloped-box.box-green {
-    background: #E6F4F1 !important; /* Light mint green */
-    box-shadow: 0 15px 40px rgba(0, 34, 28, 0.1) !important;
-}
-
-.scalloped-box.box-green .slide-title,
-.scalloped-box.box-green .slide-text {
-    color: #00221C !important; /* Dark forest green */
-}
-
-.btn-dark-green {
-    background: #00221C !important;
-}
-
-.btn-dark-green:hover {
-    background: #003D32 !important;
+    background: #F2FAF9 !important; /* Extremely subtle mint for the card */
+    box-shadow: 0 15px 40px rgba(0, 34, 28, 0.05) !important;
 }
 
 @keyframes fadeInScale {
@@ -103,19 +91,12 @@
     }
 }
 
-/* Scalloped effect using radial gradient mask */
-.scalloped-box::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    z-index: -1;
-    background: #F0DFF2;
-    border-radius: inherit;
-    mask-image: radial-gradient(circle at 15px 15px, transparent 15px, black 16px);
-    mask-size: 30px 30px;
+.btn-dark-green {
+    background: var(--secondary) !important; /* Updated to Charcoal */
+}
+
+.btn-dark-green:hover {
+    background: var(--logo-red) !important; /* Updated to Logo Red */
 }
 
 .slide-title {
@@ -177,7 +158,7 @@
 }
 
 .slider-arrow:hover {
-    background: #003D32;
+    background: var(--logo-red);
     transform: scale(1.1);
 }
 
@@ -196,6 +177,7 @@
 }
 
 .dot.active {
+    background: var(--logo-red);
     opacity: 1;
 }
 
@@ -765,7 +747,7 @@
 .featured-slider .product-info h3 {
     font-family: 'Playfair Display', serif !important;
     font-size: 20px !important;
-    color: #00221C !important;
+    color: var(--secondary) !important; /* Using Charcoal to match Logo Black */
     margin: 0 !important;
 }
 
@@ -796,6 +778,7 @@
 }
 
 .slider-nav-arrows .arrow-btn:hover {
+    background: var(--logo-red);
     opacity: 1;
     transform: scale(1.1);
 }

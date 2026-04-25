@@ -1,5 +1,5 @@
 /* ========================================
-   A1 BAKERY - PREMIUM STYLES
+   A-ONE BAKERY - PREMIUM STYLES
    Canada's Finest Bakery Chain
 ======================================== */
 
@@ -7,7 +7,8 @@
     --primary: #C4956A;
     --primary-dark: #A67B5B;
     --primary-light: #E8D5C4;
-    --secondary: #2C1810;
+    --secondary: #1A1A1A; /* Deep Charcoal to match Logo Black */
+    --logo-red: #E1251B; /* Direct Logo Red */
     --accent: #D4A574;
     --gold: #D4AF37;
     --cream: #FDF8F3;

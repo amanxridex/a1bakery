@@ -1,5 +1,5 @@
 // ========================================
-// A1 BAKERY - MENU PAGE JAVASCRIPT
+// A-ONE BAKERY - MENU PAGE JAVASCRIPT
 // Independent | No Global Dependencies
 // ========================================
 

@@ -1,5 +1,5 @@
 // ========================================
-// A1 BAKERY - MAIN JAVASCRIPT
+// A-ONE BAKERY - MAIN JAVASCRIPT
 // Canada's Finest Bakery Chain
 // ========================================
 
