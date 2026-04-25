@@ -26,7 +26,7 @@
     position: absolute;
     bottom: -20px;
     right: -20px;
-    background: var(--primary);
+    background: var(--logo-red);
     color: var(--white);
     width: 120px;
     height: 120px;
@@ -77,8 +77,8 @@
 .about-feature i {
     width: 48px;
     height: 48px;
-    background: var(--primary-light);
-    color: var(--primary);
+    background: rgba(225, 37, 27, 0.1);
+    color: var(--logo-red);
     border-radius: 12px;
     display: flex;
     align-items: center;

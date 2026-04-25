@@ -29,7 +29,7 @@
 }
 
 .checkout-section h3 i {
-    color: var(--primary);
+    color: var(--logo-red);
 }
 
 .payment-methods {
@@ -50,15 +50,15 @@
 
 .payment-method.active,
 .payment-method:hover {
-    border-color: var(--primary);
-    background: var(--primary-light);
+    border-color: var(--logo-red);
+    background: rgba(225, 37, 27, 0.05);
 }
 
 .payment-method i {
     font-size: 24px;
     margin-bottom: 8px;
     display: block;
-    color: var(--primary);
+    color: var(--logo-red);
 }
 
 .payment-method span {

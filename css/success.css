@@ -15,7 +15,7 @@
 .success-icon {
     width: 100px;
     height: 100px;
-    background: #27ae60;
+    background: var(--logo-red);
     border-radius: 50%;
     display: flex;
     align-items: center;
