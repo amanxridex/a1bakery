@@ -4,20 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A1 Bakery | Canada's Finest Bakery</title>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <title>Our Menu | A1 Bakery — Canada's Finest</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 
 <body>
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        <p>ORDER DESSERTS FOR LOCAL PICK UP OR DELIVERY</p>
+        <p>🧁 ORDER DESSERTS FOR LOCAL PICK UP OR DELIVERY 🧁</p>
     </div>
 
     <!-- Navigation -->
@@ -29,7 +28,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Our Menu</a></li>
+                <li><a href="menu.html" class="active">Our Menu</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -60,12 +59,12 @@
     <!-- Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3>Your Cart</h3>
+            <h3>🛒 Your Cart</h3>
             <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
         </div>
         <div class="cart-items" id="cartItems">
             <div class="empty-cart">
-                <i class="fas fa-shopping-basket"></i>
+                <div class="empty-cart-emoji">🧺</div>
                 <p>Your cart is empty</p>
                 <span>Add some delicious items!</span>
             </div>
@@ -75,7 +74,7 @@
                 <span>Total</span>
                 <span id="cartTotal">$0.00</span>
             </div>
-            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout 🡢</button>
         </div>
     </div>
     <div class="cart-overlay" id="cartOverlay"></div>
@@ -93,69 +92,155 @@
 
     <!-- Toast Notification -->
     <div class="toast" id="toast">
-        <i class="fas fa-check-circle"></i>
+        <span class="toast-emoji">✅</span>
         <span id="toastMessage">Item added to cart!</span>
     </div>
 
-    
-<!-- ========== MENU PAGE ========== -->
-    <section class="page" id="menu">
-        <div class="page-header">
-            <div class="page-header-bg"></div>
-            <div class="page-header-content">
-                <span class="page-tag">Our Menu</span>
-                <h1>Delicious Selection</h1>
-                <p>Handcrafted with premium ingredients and decades of expertise</p>
-            </div>
+    <!-- ========== MENU HERO ========== -->
+    <section class="menu-hero">
+        <div class="menu-hero-bg">
+            <div class="floating-emoji emoji-1">🧁</div>
+            <div class="floating-emoji emoji-2">🍰</div>
+            <div class="floating-emoji emoji-3">🥐</div>
+            <div class="floating-emoji emoji-4">🍩</div>
+            <div class="floating-emoji emoji-5">🍪</div>
+            <div class="floating-emoji emoji-6">🥖</div>
         </div>
-
-        <div class="menu-container">
-            <div class="menu-sidebar">
-                <h3>Categories</h3>
-                <ul class="menu-filters" id="menuFilters">
-                    <li class="active" data-filter="all">All Items</li>
-                    <li data-filter="bread">Artisan Breads</li>
-                    <li data-filter="pastry">French Pastries</li>
-                    <li data-filter="cake">Custom Cakes</li>
-                    <li data-filter="cookie">Gourmet Cookies</li>
-                    <li data-filter="donut">Donuts & Rings</li>
-                    <li data-filter="pie">Classic Pies</li>
-                </ul>
-                <div class="menu-price-filter">
-                    <h4>Price Range</h4>
-                    <input type="range" min="0" max="50" value="50" id="priceRange">
-                    <div class="price-labels">
-                        <span>$0</span>
-                        <span id="priceValue">$50</span>
-                    </div>
+        <div class="menu-hero-content">
+            <span class="menu-hero-tag">✨ Fresh Daily</span>
+            <h1>Our Delicious Menu</h1>
+            <p>Handcrafted with love, baked with passion. Every item is made fresh in our Canadian kitchens.</p>
+            <div class="menu-hero-stats">
+                <div class="menu-stat">
+                    <span class="stat-num">18+</span>
+                    <span class="stat-label">Varieties</span>
                 </div>
-            </div>
-
-            <div class="menu-main">
-                <div class="menu-toolbar">
-                    <span id="menuCount">Showing all items</span>
-                    <div class="menu-sort">
-                        <select id="sortSelect">
-                            <option value="popular">Most Popular</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="newest">Newest</option>
-                        </select>
-                    </div>
+                <div class="menu-stat">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label">Fresh Daily</span>
                 </div>
-                <div class="products-grid" id="menuProducts"></div>
+                <div class="menu-stat">
+                    <span class="stat-num">50+</span>
+                    <span class="stat-label">Years Baking</span>
+                </div>
             </div>
         </div>
     </section>
-<!-- Footer -->
+
+    <!-- ========== CATEGORY TABS ========== -->
+    <section class="category-tabs-section">
+        <div class="container">
+            <div class="category-tabs" id="categoryTabs">
+                <button class="cat-tab active" data-filter="all">
+                    <span class="cat-emoji">🍽️</span>
+                    <span>All Items</span>
+                </button>
+                <button class="cat-tab" data-filter="bread">
+                    <span class="cat-emoji">🥖</span>
+                    <span>Breads</span>
+                </button>
+                <button class="cat-tab" data-filter="pastry">
+                    <span class="cat-emoji">🥐</span>
+                    <span>Pastries</span>
+                </button>
+                <button class="cat-tab" data-filter="cake">
+                    <span class="cat-emoji">🍰</span>
+                    <span>Cakes</span>
+                </button>
+                <button class="cat-tab" data-filter="cookie">
+                    <span class="cat-emoji">🍪</span>
+                    <span>Cookies</span>
+                </button>
+                <button class="cat-tab" data-filter="donut">
+                    <span class="cat-emoji">🍩</span>
+                    <span>Donuts</span>
+                </button>
+                <button class="cat-tab" data-filter="pie">
+                    <span class="cat-emoji">🥧</span>
+                    <span>Pies</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MENU CONTENT ========== -->
+    <section class="menu-content-section">
+        <div class="container">
+            <div class="menu-toolbar">
+                <div class="menu-results">
+                    <span id="menuCount">Showing all items</span>
+                    <span class="menu-count-badge" id="menuCountBadge">18</span>
+                </div>
+                <div class="menu-controls">
+                    <div class="price-filter-inline">
+                        <label>Max Price: <strong id="priceValue">$50</strong></label>
+                        <input type="range" min="0" max="50" value="50" id="priceRange">
+                    </div>
+                    <div class="menu-sort">
+                        <select id="sortSelect">
+                            <option value="popular">🔥 Most Popular</option>
+                            <option value="price-low">💰 Price: Low to High</option>
+                            <option value="price-high">💰 Price: High to Low</option>
+                            <option value="newest">✨ Newest</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="menuProducts"></div>
+
+            <!-- Empty State -->
+            <div class="empty-products" id="emptyProducts" style="display: none;">
+                <div class="empty-emoji">😢</div>
+                <h3>No items found</h3>
+                <p>Try adjusting your filters or search for something else!</p>
+                <button class="btn btn-primary" onclick="resetFilters()">View All Items</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURED BANNER ========== -->
+    <section class="featured-banner">
+        <div class="featured-banner-inner">
+            <div class="featured-banner-content">
+                <span class="featured-tag">🎉 Special Offer</span>
+                <h2>Buy 2 Get 1 Free</h2>
+                <p>On all artisan breads this week! Fresh from our ovens to your table.</p>
+                <button class="btn btn-white" onclick="filterByCategory('bread')">Shop Breads 🥖</button>
+            </div>
+            <div class="featured-banner-img">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Fresh Bread">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NEWSLETTER ========== -->
+    <section class="menu-newsletter">
+        <div class="container">
+            <div class="newsletter-box">
+                <div class="newsletter-content">
+                    <span class="newsletter-emoji">💌</span>
+                    <h3>Join the A1 Family</h3>
+                    <p>Get exclusive offers, new flavor alerts & birthday treats!</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="your@email.com" required>
+                        <button type="submit" class="btn btn-primary">Subscribe ✨</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-main">
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-brand">
-                        <div class="logo">
-                            <i class="fas fa-bread-slice"></i>
-                            <span>A1 Bakery</span>
+                        <div class="footer-logo">
+                            <span class="logo-main">A1 BAKERY</span>
+                            <span class="logo-est">EST. 1974</span>
                         </div>
                         <p>Canada's premier artisan bakery chain, bringing French baking excellence to every Canadian
                             home since 1974.</p>
@@ -163,42 +248,40 @@
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
                     <div class="footer-links">
                         <h4>Quick Links</h4>
                         <ul>
-                            <li><a href="#home" data-page="home">Home</a></li>
-                            <li><a href="#menu" data-page="menu">Our Menu</a></li>
-                            <li><a href="#about" data-page="about">About Us</a></li>
-                            <li><a href="#contact" data-page="contact">Contact</a></li>
+                            <li><a href="index.html">🏠 Home</a></li>
+                            <li><a href="menu.html">🍰 Our Menu</a></li>
+                            <li><a href="about.html">📖 About Us</a></li>
+                            <li><a href="contact.html">📞 Contact</a></li>
                         </ul>
                     </div>
                     <div class="footer-links">
                         <h4>Products</h4>
                         <ul>
-                            <li><a href="#menu" data-filter="bread">Artisan Breads</a></li>
-                            <li><a href="#menu" data-filter="pastry">French Pastries</a></li>
-                            <li><a href="#menu" data-filter="cake">Custom Cakes</a></li>
-                            <li><a href="#menu" data-filter="cookie">Gourmet Cookies</a></li>
+                            <li><a href="#" data-filter="bread">🥖 Artisan Breads</a></li>
+                            <li><a href="#" data-filter="pastry">🥐 French Pastries</a></li>
+                            <li><a href="#" data-filter="cake">🍰 Custom Cakes</a></li>
+                            <li><a href="#" data-filter="cookie">🍪 Gourmet Cookies</a></li>
                         </ul>
                     </div>
                     <div class="footer-contact">
                         <h4>Contact</h4>
-                        <p><i class="fas fa-map-marker-alt"></i> 1075 LORIMAR DRIVE Unit 1-5, Mississauga ON, L5S 1N2</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 1075 Lorimar Drive Unit 1-5, Mississauga, ON</p>
                         <p><i class="fas fa-phone"></i> 1-905-564-2663</p>
                         <p><i class="fas fa-envelope"></i> info@aonecakes.com</p>
-                        <p><i class="fas fa-clock"></i> Open Daily 6AM - 9PM</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 6AM - 9PM | Sun: 7AM - 8PM</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p> A1 Bakery. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of
-                        Service</a></p>
-                <p class="footer-badge"><i class="fas fa-maple-leaf"></i> Proudly Canadian | DESIGNED BY SOCIAL DADDY</p>
+                <p>🍁 A1 Bakery. All rights reserved. | Designed with ❤️ by Social Daddy</p>
             </div>
         </div>
     </footer>
@@ -211,7 +294,6 @@
         </div>
     </div>
 
-    <script src="js/global.js"></script>
     <script src="js/menu.js"></script>
 </body>
 
