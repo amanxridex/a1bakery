@@ -48,48 +48,7 @@
     to { transform: scale(1.1); }
 }
 
-.hero-overlay-content {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 80px;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.scalloped-box {
-    background: var(--white);
-    padding: 60px 40px;
-    width: 100%;
-    max-width: 480px;
-    border-radius: 24px; /* Sleeker border radius */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-    position: relative;
-    box-shadow: var(--shadow-lg);
-    animation: fadeInScale 1s ease-out;
-}
-
-.scalloped-box.box-green {
-    background: #F2FAF9 !important; /* Extremely subtle mint for the card */
-    box-shadow: 0 15px 40px rgba(0, 34, 28, 0.05) !important;
-}
-
-@keyframes fadeInScale {
-    from { 
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to { 
-        opacity: 1;
-        transform: scale(1);
-    }
-}
+/* Slider Overlays Removed */
 
 .btn-dark-green {
     background: var(--secondary) !important; /* Updated to Charcoal */
@@ -136,10 +95,19 @@
 }
 
 .slider-controls {
-    margin-top: 30px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .slider-arrow {
