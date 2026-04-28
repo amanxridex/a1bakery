@@ -587,6 +587,14 @@
     text-align: center;
     padding: 40px;
     animation: fadeIn 0.5s ease;
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 48px;
+    color: var(--primary-light);
+    opacity: 0.3;
+    margin-bottom: -20px;
 }
 
 .testimonial-card.active {
@@ -684,9 +692,25 @@
     border-radius: 50%;
     z-index: 0;
 }
-    background: var(--primary);
-    border-radius: 50%;
-    opacity: 0.1;
+
+.newsletter-floating-badge {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    background: var(--white);
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    color: var(--logo-red);
+    animation: heroFloat 4s infinite ease-in-out;
+}
+
+.newsletter-floating-badge i {
+    font-size: 14px;
 }
 
 .newsletter-content {
