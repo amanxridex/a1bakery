@@ -182,7 +182,6 @@ img {
 .splash-logo img {
     max-width: 300px;
     height: auto;
-    filter: drop-shadow(0 0 30px rgba(0,0,0,0.5));
 }
 
 /* State Classes */
@@ -249,7 +248,7 @@ img {
 }
 
 .nav-logo-img {
-    height: 45px;
+    height: 70px;
     width: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
@@ -1528,7 +1527,6 @@ img {
     height: auto;
     display: inline-block;
     vertical-align: middle;
-    filter: drop-shadow(4px 4px 0px #1A1A1A); /* Add the pop-art shadow to the image */
 }
 
 .footer-max-right {
