@@ -244,27 +244,19 @@ img {
 
 .logo {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    color: #00221C;
+    align-items: center;
     transition: var(--transition);
 }
 
-.logo-main {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    line-height: 1;
+.nav-logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.logo-est {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    opacity: 0.8;
+.nav-logo-img:hover {
+    transform: scale(1.05);
 }
 
 .nav-links {
