@@ -221,81 +221,77 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ========================================
-// SECRET MENU FROSTED GLASS EFFECT
+// PASTEL GRID SCROLL REVEAL EFFECT
 // ========================================
-document.addEventListener('DOMContentLoaded', () => {
-    const canvas = document.getElementById('frostedCanvas');
-    if (!canvas) return;
+document.addEventListener(\'DOMContentLoaded\', () => {
+    const section = document.getElementById(\'secretMenu\');
+    const pastelGrid = document.getElementById(\'pastelGrid\');
+    const instruction = document.getElementById(\'scrollInstruction\');
+    if (!section || !pastelGrid) return;
     
-    const ctx = canvas.getContext('2d');
-    const section = document.getElementById('secretMenu');
+    const boxes = Array.from(pastelGrid.querySelectorAll(\'\.pastel-box\'));
     
-    function resizeCanvas() {
-        canvas.width = section.offsetWidth;
-        canvas.height = section.offsetHeight;
-        fillFrostedGlass();
-    }
-    
-    function fillFrostedGlass() {
-        if (section.classList.contains('reveal-complete')) return;
-        ctx.globalCompositeOperation = 'source-over';
-        ctx.fillStyle = 'rgba(245, 245, 245, 0.98)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-    }
-    
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    
-    let isDrawing = false;
-    let strokeCount = 0;
-    const requiredStrokes = Math.min((canvas.width * canvas.height) / 10000, 100); // Dynamic threshold
-    
-    function getMousePos(e) {
-        const rect = canvas.getBoundingClientRect();
-        if (e.touches && e.touches.length > 0) {
-            return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+    window.addEventListener(\'scroll\', () => {
+        const rect = section.getBoundingClientRect();
+        // Calculate progress: 0 when top of section hits top of viewport, 1 when bottom hits top of viewport
+        // Since section is 250vh and sticky container is 100vh, we have 150vh of scroll distance.
+        
+        let progress = 0;
+        const scrollDistance = section.offsetHeight - window.innerHeight;
+        
+        if (rect.top <= 0) {
+            progress = Math.abs(rect.top) / scrollDistance;
         }
-        return { x: e.clientX - rect.left, y: e.clientY - rect.top };
-    }
-    
-    function scratch(e) {
-        if (!isDrawing) return;
-        if (e.cancelable) e.preventDefault();
         
-        section.classList.add('wiping');
+        if (progress < 0) progress = 0;
+        if (progress > 1) progress = 1;
         
-        const pos = getMousePos(e);
-        ctx.globalCompositeOperation = 'destination-out';
-        
-        // Draw soft brush
-        const gradient = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 80);
-        gradient.addColorStop(0, 'rgba(0,0,0,1)');
-        gradient.addColorStop(0.8, 'rgba(0,0,0,0.8)');
-        gradient.addColorStop(1, 'rgba(0,0,0,0)');
-        
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(pos.x, pos.y, 80, 0, Math.PI * 2);
-        ctx.fill();
-        
-        strokeCount++;
-        if (strokeCount > requiredStrokes) {
-            completeReveal();
+        // Hide instruction early on
+        if (instruction) {
+            instruction.style.opacity = progress > 0.05 ? \'0\' : \'1\';
         }
-    }
-    
-    function completeReveal() {
-        isDrawing = false;
-        section.classList.add('reveal-complete');
-        canvas.removeEventListener('mousemove', scratch);
-        canvas.removeEventListener('touchmove', scratch);
-    }
-    
-    canvas.addEventListener('mousedown', (e) => { isDrawing = true; scratch(e); });
-    canvas.addEventListener('touchstart', (e) => { isDrawing = true; scratch(e); }, { passive: false });
-    canvas.addEventListener('mousemove', scratch);
-    canvas.addEventListener('touchmove', scratch, { passive: false });
-    canvas.addEventListener('mouseup', () => { isDrawing = false; });
-    canvas.addEventListener('touchend', () => { isDrawing = false; });
-    canvas.addEventListener('mouseleave', () => { isDrawing = false; });
+        
+        // Reveal complete class for text
+        if (progress > 0.8) {
+            section.classList.add(\'reveal-complete\');
+        } else {
+            section.classList.remove(\'reveal-complete\');
+        }
+        
+        // Animate boxes
+        boxes.forEach((box, index) => {
+            // Calculate direction to fly out
+            const row = Math.floor(index / 3); // 0, 1, 2
+            const col = index % 3; // 0, 1, 2
+            
+            // Normalize to -1, 0, 1 from center
+            const dirX = col - 1;
+            const dirY = row - 1;
+            
+            // If center box (0,0), it scales up massively or flies straight towards camera
+            // Let\'s push center box up and scale it
+            let moveX = dirX * progress * 150; // percentage to move
+            let moveY = dirY * progress * 150;
+            
+            if (dirX === 0 && dirY === 0) {
+                moveX = 0;
+                moveY = progress * 200;
+            }
+            
+            // Scale up as they move apart to ensure screen is covered initially and they expand
+            const scale = 1 + (progress * 2);
+            
+            // Apply transform
+            box.style.transform = \	ranslate(\%, \%) scale(\)\;
+            
+            // Fade them out at the very end to ensure they don\'t block clicks
+            if (progress > 0.95) {
+                box.style.opacity = \'0\';
+                pastelGrid.style.pointerEvents = \'none\';
+            } else {
+                box.style.opacity = \'1\';
+                pastelGrid.style.pointerEvents = \'auto\';
+            }
+        });
+    });
 });

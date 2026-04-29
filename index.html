@@ -310,19 +310,35 @@
 
         <!-- Secret Menu Reveal Section -->
         <section class="secret-menu-section" id="secretMenu">
-            <div class="hidden-content">
-                <div class="hidden-bg-overlay"></div>
-                <div class="hidden-text-content">
-                    <span class="secret-tag">SHHH... IT'S A SECRET</span>
-                    <h2 class="secret-title">The Midnight Truffle Cake</h2>
-                    <p class="secret-desc">Rich, dark Belgian chocolate, espresso-infused layers, and a molten truffle core. Only available for those who know.</p>
-                    <a href="menu.html" class="btn btn-primary" style="margin-top: 20px;">Order the Secret</a>
+            <div class="sticky-reveal-container">
+                <div class="hidden-content">
+                    <div class="hidden-bg-overlay"></div>
+                    <div class="hidden-text-content">
+                        <span class="secret-tag">SHHH... IT'S A SECRET</span>
+                        <h2 class="secret-title">The Midnight Truffle Cake</h2>
+                        <p class="secret-desc">Rich, dark Belgian chocolate, espresso-infused layers, and a molten truffle core. Only available for those who know.</p>
+                        <a href="menu.html" class="btn btn-primary" style="margin-top: 20px;">Order the Secret</a>
+                    </div>
                 </div>
-            </div>
-            <canvas id="frostedCanvas"></canvas>
-            <div class="instruction-overlay" id="instructionOverlay">
-                <i class="fas fa-hand-pointer"></i>
-                <p>Wipe the glass to reveal our secret...</p>
+                
+                <!-- Pastel Grid Overlay -->
+                <div class="pastel-grid-overlay" id="pastelGrid">
+                    <!-- 9 boxes in a 3x3 grid -->
+                    <div class="pastel-box box-1" style="background: #FFD1DC;"></div>
+                    <div class="pastel-box box-2" style="background: #FFDFBA;"></div>
+                    <div class="pastel-box box-3" style="background: #FFFFBA;"></div>
+                    <div class="pastel-box box-4" style="background: #BAFFC9;"></div>
+                    <div class="pastel-box box-5" style="background: #BAE1FF;"></div>
+                    <div class="pastel-box box-6" style="background: #E8B4B8;"></div>
+                    <div class="pastel-box box-7" style="background: #E2F0CB;"></div>
+                    <div class="pastel-box box-8" style="background: #FFB7B2;"></div>
+                    <div class="pastel-box box-9" style="background: #E0BBE4;"></div>
+                </div>
+                
+                <div class="scroll-instruction" id="scrollInstruction">
+                    <p>Scroll down to reveal...</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
         </section>
 
