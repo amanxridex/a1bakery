@@ -6,6 +6,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const bulkOrderForm = document.getElementById('bulkOrderForm');
     const toast = document.getElementById('toast');
     const toastMessage = document.getElementById('toastMessage');
+    
+    // Conditional Logic for Wholesale / Resale
+    const eventType = document.getElementById('eventType');
+    const eventDetailsRow = document.getElementById('eventDetailsRow');
+    const eventDate = document.getElementById('eventDate');
+    const eventGuests = document.getElementById('eventGuests');
+
+    if (eventType && eventDetailsRow && eventDate && eventGuests) {
+        eventType.addEventListener('change', (e) => {
+            if (e.target.value === 'Wholesale / Resale') {
+                eventDetailsRow.style.display = 'none';
+                eventDate.required = false;
+                eventGuests.required = false;
+            } else {
+                eventDetailsRow.style.display = 'flex';
+                eventDate.required = true;
+                eventGuests.required = true;
+            }
+        });
+    }
 
     if (bulkOrderForm) {
         bulkOrderForm.addEventListener('submit', (e) => {

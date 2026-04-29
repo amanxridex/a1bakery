@@ -165,24 +165,24 @@
 
                             <div class="form-group">
                                 <label>Event Type</label>
-                                <select required>
+                                <select id="eventType" required>
                                     <option value="" disabled selected>Select Event Type</option>
-                                    <option>Corporate Event</option>
-                                    <option>Wedding</option>
-                                    <option>Birthday Party</option>
-                                    <option>Wholesale / Resale</option>
-                                    <option>Other</option>
+                                    <option value="Corporate Event">Corporate Event</option>
+                                    <option value="Wedding">Wedding</option>
+                                    <option value="Birthday Party">Birthday Party</option>
+                                    <option value="Wholesale / Resale">Wholesale / Resale</option>
+                                    <option value="Other">Other</option>
                                 </select>
                             </div>
 
-                            <div class="form-row">
+                            <div class="form-row" id="eventDetailsRow">
                                 <div class="form-group half">
                                     <label>Event Date</label>
-                                    <input type="date" required>
+                                    <input type="date" id="eventDate" required>
                                 </div>
                                 <div class="form-group half">
                                     <label>Estimated Guests / Quantity</label>
-                                    <input type="number" placeholder="e.g. 150" required>
+                                    <input type="number" id="eventGuests" placeholder="e.g. 150" required>
                                 </div>
                             </div>
 
