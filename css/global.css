@@ -41,6 +41,11 @@ body {
     line-height: 1.6;
     user-select: none;
     -webkit-user-select: none;
+    cursor: url('../assets/cursor_cookie.png'), auto;
+}
+
+a, button, .category-card, .product-card {
+    cursor: url('../assets/cursor_cookie.png'), pointer;
 }
 
 img, video {
