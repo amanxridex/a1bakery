@@ -223,18 +223,16 @@ document.addEventListener('DOMContentLoaded', () => {
 // ========================================
 // PASTEL GRID SCROLL REVEAL EFFECT
 // ========================================
-document.addEventListener(\'DOMContentLoaded\', () => {
-    const section = document.getElementById(\'secretMenu\');
-    const pastelGrid = document.getElementById(\'pastelGrid\');
-    const instruction = document.getElementById(\'scrollInstruction\');
+document.addEventListener('DOMContentLoaded', () => {
+    const section = document.getElementById('secretMenu');
+    const pastelGrid = document.getElementById('pastelGrid');
+    const instruction = document.getElementById('scrollInstruction');
     if (!section || !pastelGrid) return;
     
-    const boxes = Array.from(pastelGrid.querySelectorAll(\'\.pastel-box\'));
+    const boxes = Array.from(pastelGrid.querySelectorAll('.pastel-box'));
     
-    window.addEventListener(\'scroll\', () => {
+    window.addEventListener('scroll', () => {
         const rect = section.getBoundingClientRect();
-        // Calculate progress: 0 when top of section hits top of viewport, 1 when bottom hits top of viewport
-        // Since section is 250vh and sticky container is 100vh, we have 150vh of scroll distance.
         
         let progress = 0;
         const scrollDistance = section.offsetHeight - window.innerHeight;
@@ -246,31 +244,24 @@ document.addEventListener(\'DOMContentLoaded\', () => {
         if (progress < 0) progress = 0;
         if (progress > 1) progress = 1;
         
-        // Hide instruction early on
         if (instruction) {
-            instruction.style.opacity = progress > 0.05 ? \'0\' : \'1\';
+            instruction.style.opacity = progress > 0.05 ? '0' : '1';
         }
         
-        // Reveal complete class for text
         if (progress > 0.8) {
-            section.classList.add(\'reveal-complete\');
+            section.classList.add('reveal-complete');
         } else {
-            section.classList.remove(\'reveal-complete\');
+            section.classList.remove('reveal-complete');
         }
         
-        // Animate boxes
         boxes.forEach((box, index) => {
-            // Calculate direction to fly out
-            const row = Math.floor(index / 3); // 0, 1, 2
-            const col = index % 3; // 0, 1, 2
+            const row = Math.floor(index / 3);
+            const col = index % 3;
             
-            // Normalize to -1, 0, 1 from center
             const dirX = col - 1;
             const dirY = row - 1;
             
-            // If center box (0,0), it scales up massively or flies straight towards camera
-            // Let\'s push center box up and scale it
-            let moveX = dirX * progress * 150; // percentage to move
+            let moveX = dirX * progress * 150;
             let moveY = dirY * progress * 150;
             
             if (dirX === 0 && dirY === 0) {
@@ -278,19 +269,16 @@ document.addEventListener(\'DOMContentLoaded\', () => {
                 moveY = progress * 200;
             }
             
-            // Scale up as they move apart to ensure screen is covered initially and they expand
             const scale = 1 + (progress * 2);
             
-            // Apply transform
-            box.style.transform = \	ranslate(\%, \%) scale(\)\;
+            box.style.transform = `translate(${moveX}%, ${moveY}%) scale(${scale})`;
             
-            // Fade them out at the very end to ensure they don\'t block clicks
             if (progress > 0.95) {
-                box.style.opacity = \'0\';
-                pastelGrid.style.pointerEvents = \'none\';
+                box.style.opacity = '0';
+                pastelGrid.style.pointerEvents = 'none';
             } else {
-                box.style.opacity = \'1\';
-                pastelGrid.style.pointerEvents = \'auto\';
+                box.style.opacity = '1';
+                pastelGrid.style.pointerEvents = 'auto';
             }
         });
     });
