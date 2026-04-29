@@ -682,7 +682,7 @@
 }
 
 .footer-grid-bg {
-    background-color: #FF4D00 !important;
+    background-color: #FFB27D !important;
     background-image: 
         linear-gradient(rgba(0,0,0,0.1) 2px, transparent 2px),
         linear-gradient(90deg, rgba(0,0,0,0.1) 2px, transparent 2px) !important;
@@ -760,7 +760,7 @@
 }
 
 .cta-pill-btn {
-    background: #FFD400 !important;
+    background: #FFE066 !important;
     color: #1A1A1A !important;
     padding: 20px 80px !important;
     border-radius: 100px !important;
