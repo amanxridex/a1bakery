@@ -792,32 +792,6 @@
     filter: drop-shadow(4px 4px 0px #1A1A1A); /* Add the pop-art shadow to the image */
 }
 
-.mascot-wrapper {
-    display: inline-block;
-    margin-left: -10px;
-    vertical-align: bottom;
-    padding-bottom: 15px;
-}
-
-.logo-mascot-max {
-    background: #1A1A1A !important;
-    color: white !important;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 45px !important;
-    border: 5px solid #1A1A1A !important;
-    animation: rotateSlow 15s infinite linear;
-}
-
-@keyframes rotateSlow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
 .footer-max-right {
     flex: 1;
     display: flex;
@@ -825,24 +799,43 @@
     align-items: flex-end;
 }
 
-.footer-slogan-max p {
-    font-size: 28px !important;
-    font-weight: 900 !important;
-    color: #1A1A1A !important;
-    max-width: 500px;
-    text-align: right;
-    line-height: 1.1;
-    margin-bottom: 30px;
-}
-
-.social-max {
+.footer-fast-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-end;
 }
 
-.social-max i {
-    font-size: 56px !important;
-    color: #1A1A1A !important;
+.footer-fast-nav a {
+    font-size: 32px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    color: #1A1A1A;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.footer-fast-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #FF4D00;
+    transition: width 0.3s ease;
+}
+
+.footer-fast-nav a:hover {
+    color: #FF4D00;
+}
+
+.footer-fast-nav a:hover::after {
+    width: 100%;
 }
 
 .footer-legal-max {
@@ -857,14 +850,14 @@
 @media (max-width: 1024px) {
     .logo-image-max { max-width: 180px; }
     .cta-pill-btn { font-size: 40px !important; }
-    .footer-slogan-max p { font-size: 28px !important; }
+    .footer-fast-nav a { font-size: 24px; }
     .footer-grid-bg { height: 280px; }
 }
 
 @media (max-width: 768px) {
     .footer-max-content { flex-direction: column; align-items: center; text-align: center; }
-    .footer-max-right { align-items: center; margin-top: 40px; }
-    .footer-slogan-max p { text-align: center; }
+    .footer-max-right { align-items: center; margin-top: 40px; width: 100%; }
+    .footer-fast-nav ul { justify-content: center; gap: 20px; }
     .logo-image-max { max-width: 150px; }
 }
 
