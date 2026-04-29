@@ -30,7 +30,7 @@
 }
 
 html, body {
-    cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNCIgZmlsbD0iI0M0OTU2QSIvPgogIDxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjIiIGZpbGw9IiM0QTFFNTEiLz4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEyIiByPSIyIiBmaWxsPSIjNEEwRTVJIi8+CiAgPGNpcmNsZSBjeD0iMTUiIGN5PSIyMCIgcj0iMiIgZmlsbD0iIzRBMEU1SSIvPgogIDxjaXJjbGUgY3g9IjIyIiBjeT0iMjIiIHI9IjIiIGZpbGw9IiM0QTFFNTEiLz4KPC9zdmc+') 16 16, auto !important;
+    cursor: url('../assets/cursor_icon5.png') 24 24, auto !important;
     scroll-behavior: smooth;
 }
 
@@ -45,7 +45,7 @@ body {
 }
 
 a, button, .category-card, .product-card, .btn, input, select, textarea {
-    cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNCIgZmlsbD0iI0M0OTU2QSIvPgogIDxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjIiIGZpbGw9IiM0QTFFNTEiLz4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjEyIiByPSIyIiBmaWxsPSIjNEEwRTVJIi8+CiAgPGNpcmNsZSBjeD0iMTUiIGN5PSIyMCIgcj0iMiIgZmlsbD0iIzRBMEU1SSIvPgogIDxjaXJjbGUgY3g9IjIyIiBjeT0iMjIiIHI9IjIiIGZpbGw9IiM0QTFFNTEiLz4KPC9zdmc+') 16 16, pointer !important;
+    cursor: url('../assets/cursor_icon5.png') 24 24, pointer !important;
 }
 
 img, video {
