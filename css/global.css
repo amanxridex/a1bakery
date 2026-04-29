@@ -29,7 +29,8 @@
     box-sizing: border-box;
 }
 
-html {
+html, body {
+    cursor: url('../assets/cursor_cookie.png') 16 16, auto !important;
     scroll-behavior: smooth;
 }
 
@@ -41,11 +42,10 @@ body {
     line-height: 1.6;
     user-select: none;
     -webkit-user-select: none;
-    cursor: url('../assets/cursor_cookie.png'), auto;
 }
 
-a, button, .category-card, .product-card {
-    cursor: url('../assets/cursor_cookie.png'), pointer;
+a, button, .category-card, .product-card, .btn, input, select, textarea {
+    cursor: url('../assets/cursor_cookie.png') 16 16, pointer !important;
 }
 
 img, video {
