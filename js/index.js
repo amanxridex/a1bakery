@@ -150,3 +150,77 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// ========================================
+// FOOTER INTERACTIVE ICONS
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const footerGrid = document.getElementById('footerInteractiveGrid');
+    const icons = document.querySelectorAll('.interactive-icon');
+    
+    if (!footerGrid || icons.length === 0) return;
+
+    // 1. Pop out when scrolled into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Staggered pop-in animation
+                icons.forEach((icon, index) => {
+                    setTimeout(() => {
+                        icon.classList.add('popped');
+                    }, index * 100); // 100ms delay between each icon popping up
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    observer.observe(footerGrid);
+
+    // 2. Dodge the cursor
+    footerGrid.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        icons.forEach(icon => {
+            if (!icon.classList.contains('popped')) return;
+
+            const rect = icon.getBoundingClientRect();
+            // Calculate center of the icon
+            const iconX = rect.left + rect.width / 2;
+            const iconY = rect.top + rect.height / 2;
+
+            const distX = mouseX - iconX;
+            const distY = mouseY - iconY;
+            const distance = Math.sqrt(distX * distX + distY * distY);
+
+            // If mouse is within 150px, dodge away
+            const interactionRadius = 150;
+            if (distance < interactionRadius && distance > 0) {
+                // Calculate push force based on how close the cursor is
+                const force = (interactionRadius - distance) / interactionRadius; // 0 to 1
+                
+                // Max movement distance
+                const maxPush = 100;
+                
+                // Direction to push (away from cursor)
+                const pushX = -(distX / distance) * maxPush * force;
+                const pushY = -(distY / distance) * maxPush * force;
+
+                icon.style.setProperty('--tx', `${pushX}px`);
+                icon.style.setProperty('--ty', `${pushY}px`);
+            } else {
+                // Return to original position
+                icon.style.setProperty('--tx', `0px`);
+                icon.style.setProperty('--ty', `0px`);
+            }
+        });
+    });
+
+    // Reset when mouse leaves grid
+    footerGrid.addEventListener('mouseleave', () => {
+        icons.forEach(icon => {
+            icon.style.setProperty('--tx', `0px`);
+            icon.style.setProperty('--ty', `0px`);
+        });
+    });
+});

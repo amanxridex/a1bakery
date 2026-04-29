@@ -690,6 +690,32 @@
     mask-repeat: repeat-x;
 }
 
+/* Interactive Floating Icons */
+.interactive-icon {
+    position: absolute;
+    z-index: 1;
+    width: 80px; /* Base size */
+    height: auto;
+    opacity: 0;
+    transform: scale(0) translate(0, 0);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease-out;
+    filter: drop-shadow(4px 4px 0 rgba(26, 26, 26, 0.5));
+}
+
+.interactive-icon.popped {
+    opacity: 1;
+    /* JS sets --tx and --ty for dodging */
+    transform: scale(1) translate(var(--tx, 0px), var(--ty, 0px));
+}
+
+/* Initial positions */
+.icon-1 { top: 15%; left: 10%; width: 90px; }
+.icon-2 { bottom: 20%; left: 25%; width: 70px; }
+.icon-3 { top: 10%; right: 25%; width: 100px; }
+.icon-4 { bottom: 15%; right: 10%; width: 85px; }
+.icon-5 { top: 40%; left: 50%; transform: translateX(-50%) scale(0); width: 60px; } /* Center top */
+.icon-5.popped { transform: translateX(-50%) scale(1) translate(var(--tx, 0px), var(--ty, 0px)); }
+
 .cta-wrapper {
     position: relative;
     display: flex;
