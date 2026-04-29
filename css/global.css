@@ -248,7 +248,7 @@ img {
 }
 
 .nav-logo-img {
-    height: 70px;
+    height: 45px;
     width: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
@@ -1604,17 +1604,118 @@ img {
     color: #1A1A1A;
 }
 
+/* ========================================
+   MOBILE OPTIMIZATIONS (GENERAL)
+======================================== */
 @media (max-width: 1024px) {
+    .nav-container { padding: 0 20px; }
     .logo-image-max { max-width: 180px; }
-    .cta-pill-btn { font-size: 40px !important; }
+    .cta-pill-btn { font-size: 32px !important; padding: 15px 40px !important; }
     .footer-links-grid { gap: 20px; }
     .footer-col h4 { font-size: 20px; }
     .footer-grid-bg { height: 280px; }
 }
 
 @media (max-width: 768px) {
-    .footer-max-content { flex-direction: column; align-items: flex-start; text-align: left; }
-    .footer-max-right { align-items: flex-start; margin-top: 40px; width: 100%; }
-    .footer-links-grid { grid-template-columns: 1fr; gap: 30px; }
-    .logo-image-max { max-width: 150px; }
+    /* Navbar Mobile Fix */
+    .navbar {
+        padding: 15px 0;
+    }
+    
+    .nav-links {
+        display: none; /* Hidden on mobile, handled by mobile menu overlay */
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+        z-index: 1001;
+    }
+    
+    .nav-actions .bulk-order-btn,
+    .nav-actions .order-asap-btn {
+        display: none; /* Hide desktop buttons to save space */
+    }
+    
+    .nav-actions {
+        gap: 15px;
+    }
+    
+    .nav-logo-img {
+        height: 50px; /* Slightly smaller for mobile */
+    }
+
+    /* Footer Mobile Overhaul */
+    .footer-max-content { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        text-align: left; 
+        padding-bottom: 30px;
+    }
+    
+    .footer-max-right { 
+        align-items: flex-start; 
+        margin-top: 40px; 
+        width: 100%; 
+        padding-left: 0;
+    }
+    
+    .footer-links-grid { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+    }
+    
+    .logo-image-max { 
+        max-width: 200px; 
+    }
+    
+    .footer-legal-max {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    .footer-grid-bg {
+        height: 200px;
+    }
+    
+    .cta-pill-btn {
+        font-size: 28px !important;
+        padding: 12px 35px !important;
+        border: 4px solid #1A1A1A !important;
+        box-shadow: 0 8px 0 #1A1A1A !important;
+    }
+
+    /* Page Headers */
+    .page-header {
+        padding: 120px 20px 60px;
+        text-align: center;
+    }
+    
+    .page-header h1 {
+        font-size: 36px;
+    }
+    
+    /* Utility */
+    .container {
+        padding: 0 20px;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo-img {
+        height: 40px;
+    }
+    
+    .nav-actions {
+        gap: 10px;
+    }
+    
+    .cart-sidebar {
+        width: 100%;
+    }
 }
