@@ -462,11 +462,11 @@
     flex: 1;
     border-radius: 40px;
     border: 6px solid #1A1A1A;
-    box-shadow: 12px 12px 0px #FF4D00;
+    box-shadow: 12px 12px 0px #FFB27D; /* Pastel Orange */
 }
 
 .promo-card-alt {
-    box-shadow: 12px 12px 0px #FFC107;
+    box-shadow: 12px 12px 0px #FFE066; /* Pastel Yellow */
 }
 
 .promo-bg {
