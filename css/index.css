@@ -779,15 +779,12 @@
     flex: 1;
 }
 
-.logo-text-max {
-    font-size: 140px !important;
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 900 !important;
-    color: #1A1A1A !important;
-    letter-spacing: -8px !important;
-    line-height: 0.75;
-    margin: 0;
+.logo-image-max {
+    max-width: 250px;
+    height: auto;
     display: inline-block;
+    vertical-align: middle;
+    filter: drop-shadow(4px 4px 0px #1A1A1A); /* Add the pop-art shadow to the image */
 }
 
 .mascot-wrapper {
@@ -853,7 +850,7 @@
 }
 
 @media (max-width: 1024px) {
-    .logo-text-max { font-size: 120px !important; }
+    .logo-image-max { max-width: 180px; }
     .cta-pill-btn { font-size: 40px !important; }
     .footer-slogan-max p { font-size: 28px !important; }
     .footer-grid-bg { height: 280px; }
@@ -863,7 +860,7 @@
     .footer-max-content { flex-direction: column; align-items: center; text-align: center; }
     .footer-max-right { align-items: center; margin-top: 40px; }
     .footer-slogan-max p { text-align: center; }
-    .logo-text-max { font-size: 80px !important; }
+    .logo-image-max { max-width: 150px; }
 }
 
 .dot {
