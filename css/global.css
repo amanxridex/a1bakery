@@ -297,6 +297,22 @@ img {
     gap: 20px;
 }
 
+.bulk-order-btn {
+    background: #FFE5D9; /* Light peach background */
+    color: #51281E; /* Dark brown/peach text */
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+}
+
+.bulk-order-btn:hover {
+    background: #FFD6C2;
+    transform: translateY(-2px);
+}
+
 .order-asap-btn {
     background: #F0DFF2; /* Light purple background */
     color: #4A1E51; /* Dark purple text */
