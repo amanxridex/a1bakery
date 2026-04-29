@@ -841,8 +841,21 @@
     color: #FF4D00;
 }
 
-.footer-col.contact-info li {
+.contact-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
     margin-bottom: 15px;
+}
+
+.footer-icon {
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+}
+
+.footer-text {
+    flex-grow: 1;
 }
 
 .footer-legal-max {
