@@ -457,7 +457,7 @@
 
 .promo-card {
     position: relative;
-    padding: 80px 0;
+    padding: 40px 0;
     overflow: hidden;
     flex: 1;
     border-radius: 40px;
@@ -574,14 +574,14 @@
 
 .promo-content h2 {
     color: var(--white);
-    font-size: clamp(32px, 5vw, 56px);
-    margin-bottom: 16px;
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 12px;
 }
 
 .promo-content p {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 18px;
-    margin-bottom: 32px;
+    font-size: 16px;
+    margin-bottom: 24px;
 }
 
 /* ========================================
