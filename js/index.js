@@ -219,3 +219,83 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// ========================================
+// SECRET MENU FROSTED GLASS EFFECT
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('frostedCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    const section = document.getElementById('secretMenu');
+    
+    function resizeCanvas() {
+        canvas.width = section.offsetWidth;
+        canvas.height = section.offsetHeight;
+        fillFrostedGlass();
+    }
+    
+    function fillFrostedGlass() {
+        if (section.classList.contains('reveal-complete')) return;
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.fillStyle = 'rgba(245, 245, 245, 0.98)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    
+    let isDrawing = false;
+    let strokeCount = 0;
+    const requiredStrokes = Math.min((canvas.width * canvas.height) / 10000, 100); // Dynamic threshold
+    
+    function getMousePos(e) {
+        const rect = canvas.getBoundingClientRect();
+        if (e.touches && e.touches.length > 0) {
+            return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+        }
+        return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    }
+    
+    function scratch(e) {
+        if (!isDrawing) return;
+        if (e.cancelable) e.preventDefault();
+        
+        section.classList.add('wiping');
+        
+        const pos = getMousePos(e);
+        ctx.globalCompositeOperation = 'destination-out';
+        
+        // Draw soft brush
+        const gradient = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 80);
+        gradient.addColorStop(0, 'rgba(0,0,0,1)');
+        gradient.addColorStop(0.8, 'rgba(0,0,0,0.8)');
+        gradient.addColorStop(1, 'rgba(0,0,0,0)');
+        
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, 80, 0, Math.PI * 2);
+        ctx.fill();
+        
+        strokeCount++;
+        if (strokeCount > requiredStrokes) {
+            completeReveal();
+        }
+    }
+    
+    function completeReveal() {
+        isDrawing = false;
+        section.classList.add('reveal-complete');
+        canvas.removeEventListener('mousemove', scratch);
+        canvas.removeEventListener('touchmove', scratch);
+    }
+    
+    canvas.addEventListener('mousedown', (e) => { isDrawing = true; scratch(e); });
+    canvas.addEventListener('touchstart', (e) => { isDrawing = true; scratch(e); }, { passive: false });
+    canvas.addEventListener('mousemove', scratch);
+    canvas.addEventListener('touchmove', scratch, { passive: false });
+    canvas.addEventListener('mouseup', () => { isDrawing = false; });
+    canvas.addEventListener('touchend', () => { isDrawing = false; });
+    canvas.addEventListener('mouseleave', () => { isDrawing = false; });
+});

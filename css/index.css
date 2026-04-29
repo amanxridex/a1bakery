@@ -1233,3 +1233,135 @@
         margin-right: 20px;
     }
 }
+
+/* ========================================
+   SECRET MENU SECTION
+======================================== */
+.secret-menu-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: #000;
+}
+
+.hidden-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/header2.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.hidden-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+.hidden-text-content {
+    position: relative;
+    z-index: 3;
+    padding: 0 20px;
+    max-width: 600px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.5s;
+    pointer-events: none;
+}
+
+.secret-menu-section.reveal-complete .hidden-text-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.secret-tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--primary);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.secret-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.secret-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#frostedCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    cursor: crosshair;
+    transition: opacity 1.5s ease;
+}
+
+.instruction-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    pointer-events: none;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    animation: pulseInstruction 2s infinite alternate;
+    transition: opacity 0.5s ease;
+}
+
+.instruction-overlay i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+@keyframes pulseInstruction {
+    0% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.95); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+.secret-menu-section.reveal-complete #frostedCanvas,
+.secret-menu-section.reveal-complete .instruction-overlay,
+.secret-menu-section.wiping .instruction-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .secret-title {
+        font-size: 32px;
+    }
+    .secret-menu-section {
+        height: 400px;
+    }
+}
