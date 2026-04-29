@@ -11,7 +11,7 @@ const products = [
         category: "bread",
         price: 8.99,
         image: "https://images.unsplash.com/photo-1589367920969-ab8e050bdda4?auto=format&fit=crop&q=80&w=800",
-        description: "Our signature sourdough with a crispy crust and chewy interior. Fermented for 24 hours using our 50-year-old starter.",
+        description: "Our signature sourdough with a crispy crust and chewy interior. Fermented for 24 hours using our 29-year-old starter.",
         badge: "Best Seller",
         badgeType: "popular",
         rating: 4.9,
